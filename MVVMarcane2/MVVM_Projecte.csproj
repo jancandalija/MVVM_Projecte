@@ -240,12 +240,6 @@
     <Resource Include="imatges\brillos\verd.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="imatges\brillos\vermell.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="imatges\brillos\blau.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="imatges\buttons\Iniciar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +285,8 @@
     <Content Include="audio\mop_the_golden_lotus.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="imatges\brillos\blau.png" />
+    <Resource Include="imatges\brillos\vermell.png" />
     <Resource Include="imatges\versions\versio_0_2_0_01_02_2025.png" />
     <Resource Include="imatges\audio\audio_vector.png" />
   </ItemGroup>

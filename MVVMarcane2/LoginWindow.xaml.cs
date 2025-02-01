@@ -72,20 +72,12 @@ namespace MVVMarcane2
 
             if (usuari != null && usuari.UsuariNom != null && usuari.UsuariNom != "" && usuari.UsuariPwd != null && usuari.UsuariPwd != "" && usuari.UsuariId > 0)
             {
-                loginFailedImg.Opacity = 0;
-                //loginPermanentImg.BeginAnimation(OpacityProperty, fadeOutIn);
-                loginSuccessImg.BeginAnimation(OpacityProperty, fadeInOut);
-
                 glowIniciarVermell.Opacity = 0;
                 glowIniciarVerd.BeginAnimation(OpacityProperty, fadeOutIn);
                 glowIniciarBlau.BeginAnimation(OpacityProperty, fadeInOut);
             }
             else
             {
-                loginSuccessImg.Opacity = 0;
-                //loginPermanentImg.BeginAnimation(OpacityProperty, fadeOutIn);
-                loginFailedImg.BeginAnimation(OpacityProperty, fadeInOut);
-
                 glowIniciarBlau.Opacity = 0;
                 glowIniciarVerd.BeginAnimation(OpacityProperty, fadeOutIn);
                 glowIniciarVermell.BeginAnimation(OpacityProperty, fadeInOut);

@@ -108,93 +108,13 @@
                         </Image.Triggers>
 
                     </Image>
-
-                    <!-- GLOW VERMELL PERMANENT -->
-
-                    <Image 
-                        x:Name="loginPermanentImg"
-                        Source="/imatges/logos/logo_personalitzat_2_glow_strong_3.png"
-                        Opacity="0">
-
-                        <Image.RenderTransform>
-                            <RotateTransform x:Name="noFreeze2" CenterX="150" CenterY="150" />
-                        </Image.RenderTransform>
-                        <Image.Triggers>
-                            <EventTrigger RoutedEvent="Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)"
-                                            To="-360" Duration="0:0:40" RepeatBehavior="Forever" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
-
-                    <!-- GLOW VERMELL FORT, LOGIN FAILED -->
-
-                    <Image 
-                        x:Name="loginFailedImg"
-                        Source="/imatges/logos/logo_personalitzat_runes_glow_2.png"
-                        Opacity="0">
-
-                        <Image.RenderTransform>
-                            <RotateTransform x:Name="noFreeze3" CenterX="150" CenterY="150" />
-                        </Image.RenderTransform>
-                        <Image.Triggers>
-                            <EventTrigger RoutedEvent="Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)"
-                                            To="360" Duration="00:00:50" RepeatBehavior="Forever" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
-
-
-                    <!-- GLOW VERD FORT, LOGIN SUCCEED -->
-
-                    <Image 
-                        x:Name="loginSuccessImg"
-                        Source="/imatges/logos/logo_personalitzat_runes_glow_2_strong_2.png"
-                        Opacity="0">
-
-                        <Image.RenderTransform>
-                            <!-- giving the transform a name tells the framework not to freeze it -->
-                            <RotateTransform x:Name="noFreeze4" CenterX="150" CenterY="150" />
-                        </Image.RenderTransform>
-                        <Image.Triggers>
-                            <EventTrigger RoutedEvent="Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)"
-                                            To="360" Duration="0:0:50" RepeatBehavior="Forever" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Image.Triggers>
-
-                    </Image>
-
-
-                    <!---
-                        w = 228
-                        h = 200
-                        <Border Background="Wheat" CornerRadius="5,5,5,5"/>
-                        -->
-                    <!-- #0f0f0f, #8c1d1b -->
-
+                    
+                    <!-- IMATGES FRAMES CREDENCIALS -->
 
                     <Image Source="/imatges/text/textframe3.png" Width="200" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,50"></Image>
                     <Image Source="/imatges/text/textframe3.png" Width="200" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,00"></Image>
 
+                    <!-- TEXTBOXES PER INSERIR CREDENCIALS -->
                     <StackPanel 
                         Orientation="Vertical"
                         Grid.ColumnSpan="6"
@@ -267,13 +187,13 @@
                             </StackPanel>
 
                         </Grid>
-
-
-
-
+                        
                     </StackPanel>
 
                 </Grid>
+                
+                <!-- BOTO LOGIN -->
+                
                 <Grid
                     HorizontalAlignment="Right" 
                     Width="300"
