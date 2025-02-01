@@ -23,20 +23,8 @@
                 Source="/imatges/login_background/pandaria_bg.jpg" 
                 Stretch="Fill"/>
         </Border>
-        
-        <!-- DISC de SOUNDTRACK -->
 
-        <Grid Width="50"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Top"
-            Margin="0,0,0,0"
-              Visibility="Hidden">
 
-            <Image Source="/imatges/buttons/pandariadisk2.png" />
-
-        </Grid>
-
-            
         <!-- PANTELL INFORMACIÓ -->
             
         <Grid 
@@ -150,7 +138,8 @@
                                     Background="Transparent"
                                     Foreground="#d7c07c"
                                     BorderBrush="Wheat"
-                                    CaretBrush="Wheat"
+                                    CaretBrush="#d7c07c"
+                                    SelectionBrush="Wheat"
                                     BorderThickness="0"
                                     FontSize="16"
                                     FontFamily="WoWFont"/>
@@ -181,7 +170,8 @@
                                     Background="Transparent"
                                     Foreground="#d7c07c"
                                     BorderBrush="Wheat"
-                                    CaretBrush="Wheat"
+                                    CaretBrush="#d7c07c"
+                                    SelectionBrush="Wheat"
                                     PasswordChar="✱"
                                     BorderThickness="0"/>
                             </StackPanel>
