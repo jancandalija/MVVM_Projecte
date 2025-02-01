@@ -285,7 +285,12 @@
     <Resource Include="imatges\buttons\pandariadisk2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="audio\Mists Of Pandaria Soundtrack - 17 - The Golden Lotus.mp3" />
+    <Content Include="audio\mop_the_golden_lotus.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="audio\mop_the_golden_lotus.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

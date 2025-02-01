@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,11 +24,16 @@ namespace MVVMarcane2
     /// </summary>
     public partial class LoginWindow : Window
     {
+
+        MediaPlayer playerMusica = new MediaPlayer();
+
         public LoginWindow()
         {
             InitializeComponent();
-            MediaPlayer playerMusica = new MediaPlayer();
-            playerMusica.Open(new Uri)
+
+            playerMusica.Open(new Uri(@"audio\mop_the_golden_lotus.wav", UriKind.Relative));
+            playerMusica.Volume = 0.05;  // Ajuste de volumen
+            playerMusica.Play();
         }
 
         private void TancarApp_Click(object sender, RoutedEventArgs e)
