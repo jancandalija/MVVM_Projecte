@@ -325,7 +325,7 @@
             <TextBlock 
                 FontSize="10"
                 FontStyle="Italic"
-                Text="v0.1.0 Jan Candalija Blesas"
+                Text="v0.2.0 Jan Candalija Blesas"
                 Foreground="Wheat"
                 Opacity="0.5"/>
         </Grid>
