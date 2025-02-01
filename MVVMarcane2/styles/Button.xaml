@@ -228,28 +228,30 @@
             Value="Center" />
         <Setter 
             Property="Foreground"
-            Value="Wheat" />
+            Value="#d7c07c" />
         <Setter
-            Property="BorderBrush"
-            Value="Wheat"/>
+            Property="Background"
+            Value="Transparent"/>
+        <Setter
+            Property="Focusable"
+            Value="False"/>
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border
                         Name="border" 
-                        BorderThickness="0,0,0,1"
-                        BorderBrush="Wheat"
+                        BorderThickness="0"
                         Background="{TemplateBinding Background}">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#912020" />
+                            <Setter Property="Foreground" Value="#a87c1d" />
                         </Trigger>
 
                     </ControlTemplate.Triggers>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

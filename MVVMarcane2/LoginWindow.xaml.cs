@@ -26,11 +26,13 @@ namespace MVVMarcane2
     {
 
         MediaPlayer playerMusica = new MediaPlayer();
+        bool musicaPausada;
 
         public LoginWindow()
         {
             InitializeComponent();
 
+            musicaPausada = false;
             playerMusica.Open(new Uri(@"audio\mop_the_golden_lotus.wav", UriKind.Relative));
             playerMusica.Volume = 0.05;  // Ajuste de volumen
             playerMusica.Play();
@@ -39,6 +41,11 @@ namespace MVVMarcane2
         private void TancarApp_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        
+        private void MinimitzarApp_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
 
         private void BotoLogin_Click(object sender, RoutedEventArgs e)
@@ -90,6 +97,27 @@ namespace MVVMarcane2
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Resume o Stop
+            if (musicaPausada)
+            {
+                musicaPausada = false;
+                playerMusica.Play();
+            } 
+            else
+            {
+                musicaPausada = true;
+                playerMusica.Pause();
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // Reiniciar
+            playerMusica.Position = TimeSpan.Zero;
         }
     }
 }

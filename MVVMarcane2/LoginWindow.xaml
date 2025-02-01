@@ -43,12 +43,12 @@
             Width="300"
             HorizontalAlignment="Left" 
             VerticalAlignment="Center"
-            Margin="0,0,0,0">
+            Margin="0,-15,0,0">
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Opacity="0.8">
 
                 <Image 
-                    Source="/imatges/versions/versio_0_1_0_01_02_2025.png" 
+                    Source="/imatges/versions/versio_0_2_0_01_02_2025.png" 
                     Margin="0,-100,0,0"/>
                 
                 <TextBlock 
@@ -329,17 +329,85 @@
 
 
 
+        <!-- Audio que esta sonant -->
+
         <Grid
             HorizontalAlignment="Left" 
             VerticalAlignment="Bottom"
-            Margin="3,0,0,2">
+            Margin="3,0,0,2"
+            Height="25"
+            Opacity="0.8">
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Button 
+                    Style="{StaticResource ExitAppLoginWindow}"
+                    Margin="0,-5,5,0"
+                    Content="⏯︎"
+                    FontSize="18"
+                    Click="Button_Click"/>
+
+                <Button
+                    Style="{StaticResource ExitAppLoginWindow}"
+                    Margin="0,-8,5,0"
+                    Content="⟲"
+                    FontSize="24"
+                    Click="Button_Click_1"/>
+                
+                <Image Source="/imatges/audio/audio_vector.png" Margin="0,0,5,0"/>
+                
+                <TextBlock 
+                    FontStyle="Italic"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Text="Nael Acree - The Golden Lotus"
+                    Foreground="#d7c07c"/>
+            </StackPanel>
+
+            
+        </Grid>
+
+        <!-- Menu (Tancar, minimitzar) -->
+
+        <Grid
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            Margin="3,0,0,0"
+            Height="30"
+            Opacity="0.8">
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <!--Boto tancar-->
+                <Button 
+                    Style="{StaticResource ExitAppLoginWindow}"
+                    Margin="0,0,5,0"
+                    Content="🗙︎"
+                    FontSize="25"
+                    Click="TancarApp_Click"/>
+
+                <!--Boto minimitzar-->
+                <Button
+                    Style="{StaticResource ExitAppLoginWindow}"
+                    Margin="0,-5,0,0"
+                    Content="🗕︎"
+                    FontSize="25"
+                    Click="MinimitzarApp_Click"/>
+            </StackPanel>
+
+
+        </Grid>
+
+        <!-- Credits a Jan Candalija-->
+        <Grid
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Bottom"
+            Margin="0,0,3,2">
 
             <TextBlock 
                 FontSize="10"
                 FontStyle="Italic"
                 Text="v0.1.0 Jan Candalija Blesas"
                 Foreground="Wheat"
-                Opacity="0.1"/>
+                Opacity="0.5"/>
         </Grid>
 
 
@@ -347,7 +415,7 @@
         <!--
         Apunts Jan
         Caracters especials:
-        🍁✗👤✱
+        🍁✗👤✱⟲⏯︎🗕︎🗖︎🗙︎
         
 -->
     </Grid>
