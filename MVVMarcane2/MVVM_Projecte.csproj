@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63202D6A-7CB5-466C-B80D-D191106FCFD5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MVVMarcane2</RootNamespace>
+    <AssemblyName>MVVMarcane2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modeldbDataSet.cs">
+      <DependentUpon>modeldbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="modeldbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeldbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\DataBaseConnection.cs" />
+    <Compile Include="model\Usuari.cs" />
+    <Compile Include="model\Weapons.cs" />
+    <Compile Include="utilities\Btn.cs" />
+    <Compile Include="utilities\RelayCommand.cs" />
+    <Compile Include="utilities\ViewModelBase.cs" />
+    <Compile Include="viewmodel\HomeVM.cs" />
+    <Compile Include="viewmodel\NavigationVM.cs" />
+    <Compile Include="viewmodel\UsuariVM.cs" />
+    <Compile Include="viewmodel\WeaponsVM.cs" />
+    <Compile Include="view\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Weapons.xaml.cs">
+      <DependentUpon>Weapons.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="styles\TextBoxLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="styles\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles\Image.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles\Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="styles\Text.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="utilities\DataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Weapons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="fonts\Rubik-Medium.ttf" />
+    <Resource Include="fonts\Rubik-Regular.ttf" />
+    <Resource Include="fonts\LifeCraft_Font.ttf" />
+    <Resource Include="fonts\friz-quadrata-regular.ttf" />
+    <None Include="modeldbDataSet.xsc">
+      <DependentUpon>modeldbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="modeldbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>modeldbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="modeldbDataSet.xss">
+      <DependentUpon>modeldbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\login_background\4k-moving-winter-queen-of-ardenweald-aui5l7htzs2ykthl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\home_page2.png" />
+    <Resource Include="imatges\img_arcane.png" />
+    <Resource Include="imatges\img_players.png" />
+    <Resource Include="imatges\img_weapons.png" />
+    <Resource Include="imatges\shutdown_def.png" />
+    <Resource Include="imatges\shutdown_mo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\login_background\8CWRD8QS6L2G1589912849876.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\shutdown_def2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\login_background\Udon_Eversong_Woods_wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_1.png" />
+    <Resource Include="imatges\logos\logo_personalitzat_2.png" />
+    <Resource Include="imatges\logos\logo_personalitzat_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_2_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_2_red_width_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\login_background\silvermoon_bg_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\login_background\silvermoon_bg_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\login_background\ragnaros_bg_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_runes_glow_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_runes_glow_2_strong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_runes_glow_2_strong_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_2_glow_strong_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\login_background\pandaria_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\buttons\pandaria_exp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\logos\logo_personalitzat_map_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\buttons\pandaria_exp_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\brillos\verd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\brillos\vermell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\brillos\blau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\buttons\Iniciar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\buttons\Iniciar_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\buttons\Iniciar_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\text\textframe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\text\textframe2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\text\textframe3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\marcs\login_cercle_borde_drac_xines_or.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\marcs\login_cercle_borde_drac_xines_or_darker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\marcs\login_cercle_borde_drac_xines_or_darker_lvl2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\marcs\login_cercle_borde_drac_xines_or_darker_lvl3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\versions\versio_0_1_0_01_02_2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\buttons\pandariadisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imatges\buttons\pandariadisk2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="audio\Mists Of Pandaria Soundtrack - 17 - The Golden Lotus.mp3" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
