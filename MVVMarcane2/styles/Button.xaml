@@ -5,6 +5,9 @@
         x:Key="BtnStyle"
         TargetType="RadioButton">
 
+        <Setter
+            Property="Cursor"
+            Value="Hand"/>
         <Setter 
             Property="HorizontalAlignment"
             Value="Center" />
@@ -21,7 +24,7 @@
 
                     <Border 
                         x:Name="border"
-                        Height="40"
+                        Height="25"
                         Width="228"
                         BorderThickness="0"
                         Cursor="Hand">
@@ -29,7 +32,7 @@
                         <Border.Background>
                             <SolidColorBrush 
                                 x:Name="BorderBackground"
-                                Color="#0f0f0f" />
+                                Color="Transparent" />
                             <!-- #0f0f0f, #272B2F  -->
                         </Border.Background>
 
@@ -37,7 +40,7 @@
 
                             <Border 
                                 x:Name="Indicator"
-                                Height="35"
+                                Height="25"
                                 Width="4"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -74,9 +77,9 @@
                                     <ColorAnimation 
                                         Storyboard.TargetName="BorderBackground"
                                         Storyboard.TargetProperty="Color"
-                                        From="#272B2F"
-                                        To="#3E434A"
-                                        Duration="0:0:0.3" />
+                                        From="Transparent"
+                                        To="Green"
+                                        Duration="0:0:0.0" />
                                 </Storyboard>
                             </BeginStoryboard>
 
@@ -92,9 +95,9 @@
                                     <ColorAnimation 
                                         Storyboard.TargetName="BorderBackground"
                                         Storyboard.TargetProperty="Color"
-                                        From="#3E434A"
-                                        To="#0f0f0f"
-                                        Duration="0:0:0.3" />
+                                        From="Transparent"
+                                        To="Green"
+                                        Duration="0:0:0.0" />
                                 </Storyboard>
                             </BeginStoryboard>
 
@@ -110,7 +113,7 @@
                             <Setter 
                                 Property="Background"
                                 TargetName="border"
-                                Value="#8c1d1b" />
+                                Value="DarkGreen" />
 
                             <Setter 
                                 Property="Visibility"

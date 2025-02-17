@@ -129,20 +129,18 @@
 
                                 <TextBox 
                                     x:Name="userEntry"
-                                    CharacterCasing="Upper"
+                                    CharacterCasing="Lower"
                                     Style="{StaticResource TextBoxLogin}"
                                     Width="150"
                                     VerticalContentAlignment="Center"
                                     HorizontalContentAlignment="Center"
-                                    FontWeight="Bold"
                                     Background="Transparent"
                                     Foreground="#d7c07c"
                                     BorderBrush="Wheat"
                                     CaretBrush="#d7c07c"
                                     SelectionBrush="Wheat"
                                     BorderThickness="0"
-                                    FontSize="16"
-                                    FontFamily="WoWFont"/>
+                                    FontSize="16"/>
                             </StackPanel>
                         </Grid>
 

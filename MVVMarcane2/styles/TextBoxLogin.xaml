@@ -4,7 +4,11 @@
     <Style
         x:Key="TextBoxLogin"
         TargetType="TextBox">
-        
+
+        <Setter 
+    Property="FontFamily"
+    Value="/fonts/#Friz Quadrata" />
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">

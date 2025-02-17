@@ -16,13 +16,13 @@
             Value="Uniform" />
         <Setter 
             Property="Height"
-            Value="30" />
+            Value="20" />
         <Setter 
             Property="Width"
-            Value="30" />
+            Value="20" />
         <Setter 
             Property="Margin"
-            Value="22,0,0,0" />
+            Value="5,0,0,0" />
 
     </Style>
 

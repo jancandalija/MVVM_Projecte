@@ -7,8 +7,8 @@
         xmlns:vm="clr-namespace:MVVMarcane2.viewmodel"
         xmlns:Menu="clr-namespace:MVVMarcane2.utilities"
         mc:Ignorable="d"
-        Title="Arcane" Height="600" 
-        Width="850"
+        Title="Arcane" Height="720" 
+        Width="1280"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -26,76 +26,110 @@
         <Grid>
             <!--// Base Grid //-->
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="228" />
+                <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="622" />
             </Grid.ColumnDefinitions>
 
             <!--// Navigation Panel //-->
             <Grid HorizontalAlignment="Left"
-                  Width="228">
+                  Width="200">
                 <Border Background="#0f0f0f"/>
                 <!-- #0f0f0f, #272B2F -->
 
-                <StackPanel Height="400"
-                            Width="228">
 
-                    <!--// Home //-->
-                    <Grid>
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding HomeCommand}"
-                              IsChecked="True">
+                <Image Source="/imatges/marcs/warcraft_door_1.jpg" 
+                       VerticalAlignment="Top"
+                       Width="200"/>
 
-                            <Grid>
-                                <Image Source="imatges/img_arcane.png"
-                            Style="{StaticResource Image_Style}" />
-
-                                <TextBlock Text="Arcane"
-                            Style="{StaticResource Text_Style}" />
-                            </Grid>
-
-                        </Menu:Btn>
-
-                    </Grid>
-
-                    <!--// Players //-->
-
-                    <Grid>
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                                  Command="{Binding PlayersCommand}"
-                                  IsChecked="False">
-
-                            <Grid>
-                                <Image Source="imatges/img_players.png"
-                                       Style="{StaticResource Image_Style}"/>
-
-                                <TextBlock Text="Players"
-                                           Style="{StaticResource Text_Style}"/>
-                            </Grid>
-                            
-                        </Menu:Btn>
-                    </Grid>
+                <Image Source="/imatges/marcs/marc_wow.png"
+                       VerticalAlignment="Top"
+                       Margin="0,88,0,0"
+                       Width="238"
+                       HorizontalAlignment="Center"
+                       IsHitTestVisible="False"/>
 
 
-                    <!--// Weapons //-->
+                <Image Source="/imatges/marcs/marc_wow.png"
+                       IsHitTestVisible="False"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       Width="238"
+                       Margin="0,0,0,-30">
+                    <Image.RenderTransform>
+                        <ScaleTransform ScaleY="-1"/>
+                    </Image.RenderTransform>
+                </Image>
+                
+                
 
-                    <Grid>
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                                  Command="{Binding WeaponsCommand}"
-                                  IsChecked="False">
-
-                            <Grid>
-                                <Image Source="imatges/img_weapons.png"
-                                       Style="{StaticResource Image_Style}"/>
-
-                                <TextBlock Text="Weapons"
-                                           Style="{StaticResource Text_Style}"/>
-                            </Grid>
-
-                        </Menu:Btn>
-                    </Grid>
+                <ScrollViewer Margin="0,100,0,14" VerticalScrollBarVisibility="Hidden">
 
 
-                </StackPanel>
+                    <StackPanel Width="200">
+
+                        <!--// Home //-->
+                        <Grid>
+                            <Menu:Btn Style="{StaticResource BtnStyle}"
+              Command="{Binding HomeCommand}"
+              IsChecked="True">
+
+                                <Grid>
+                                    <Image Source="imatges/img_arcane.png"
+            Style="{StaticResource Image_Style}" />
+
+                                    <TextBlock Text="Arcane"
+            Style="{StaticResource Text_Style}" />
+                                </Grid>
+
+                            </Menu:Btn>
+
+                        </Grid>
+
+                        <!--// Players //-->
+
+                        <Grid>
+                            <Menu:Btn Style="{StaticResource BtnStyle}"
+                  Command="{Binding PlayersCommand}"
+                  IsChecked="False">
+
+                                <Grid>
+                                    <Image Source="imatges/img_players.png"
+                       Style="{StaticResource Image_Style}"/>
+
+                                    <TextBlock Text="Players"
+                           Style="{StaticResource Text_Style}"/>
+                                </Grid>
+
+                            </Menu:Btn>
+                        </Grid>
+
+
+                        <!--// Weapons //-->
+
+                        <Grid>
+                            <Menu:Btn Style="{StaticResource BtnStyle}"
+                  Command="{Binding WeaponsCommand}"
+                  IsChecked="False">
+
+                                <Grid>
+                                    <Image Source="imatges/img_weapons.png"
+                       Style="{StaticResource Image_Style}"/>
+
+                                    <TextBlock Text="Weapons"
+                           Style="{StaticResource Text_Style}"/>
+                                </Grid>
+
+                            </Menu:Btn>
+                        </Grid>
+
+
+                    </StackPanel>
+
+
+
+                </ScrollViewer>
+
+                
 
             </Grid>
 

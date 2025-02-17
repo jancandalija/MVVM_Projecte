@@ -6,7 +6,7 @@
 
         <Setter 
             Property="FontFamily"
-            Value="/Fonts/#Rubik" />
+            Value="/fonts/#Friz Quadrata" />
         <Setter 
             Property="VerticalAlignment"
             Value="Center" />
@@ -15,13 +15,13 @@
             Value="Left" />
         <Setter 
             Property="Foreground"
-            Value="#DBDBDB" />
+            Value="#d7c07c" />
         <Setter 
             Property="FontSize"
-            Value="18" />
+            Value="16" />
         <Setter 
             Property="Margin"
-            Value="70,0,0,0" />
+            Value="40,0,0,0" />
 
     </Style>
 
