@@ -27,7 +27,10 @@ namespace MVVMarcane2
 
         private void TancarApp_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            LoginWindow loginWindow = new LoginWindow();
+            MainWindow mainWindow = new MainWindow();
+            loginWindow.Close();
+            mainWindow.Close();
         }
     }
 }

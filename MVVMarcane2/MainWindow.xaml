@@ -23,11 +23,11 @@
     <Grid>
         <Border Background="#212529" />
         <!-- #0f0f0f, #212529 -->
-        <Grid>
+        <Grid Width="1280">
             <!--// Base Grid //-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="622" />
+                <ColumnDefinition Width="1080" />
             </Grid.ColumnDefinitions>
 
             <!--// Navigation Panel //-->
@@ -59,8 +59,8 @@
                         <ScaleTransform ScaleY="-1"/>
                     </Image.RenderTransform>
                 </Image>
-                
-                
+
+
 
                 <ScrollViewer Margin="0,100,0,14" VerticalScrollBarVisibility="Hidden">
 
@@ -129,7 +129,7 @@
 
                 </ScrollViewer>
 
-                
+
 
             </Grid>
 
@@ -138,8 +138,5 @@
             </Grid>
 
         </Grid>
-
-        <Button x:Name="TancarApp" Click="TancarApp_Click" Style="{StaticResource ExitApp}" />
-
     </Grid>
 </Window>

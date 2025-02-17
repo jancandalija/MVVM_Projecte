@@ -25,7 +25,7 @@
                     <Border 
                         x:Name="border"
                         Height="25"
-                        Width="228"
+                        Width="200"
                         BorderThickness="0"
                         Cursor="Hand">
 
@@ -38,15 +38,15 @@
 
                         <Grid>
 
-                            <Border 
+                            <Image 
                                 x:Name="Indicator"
-                                Height="25"
-                                Width="4"
-                                HorizontalAlignment="Left"
+                                Source="/imatges/icons/botoactiu/selec_4.png"
+                                Height="20"
+                                Width="20"
+                                Margin="0,0,5,0"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Center"
-                                Background="#FFFFFF"
-                                Visibility="Collapsed"
-                                CornerRadius="2"/>
+                                Visibility="Hidden"/>
 
                             <ContentPresenter />
 
@@ -95,8 +95,8 @@
                                     <ColorAnimation 
                                         Storyboard.TargetName="BorderBackground"
                                         Storyboard.TargetProperty="Color"
-                                        From="Transparent"
-                                        To="Green"
+                                        From="Green"
+                                        To="Transparent"
                                         Duration="0:0:0.0" />
                                 </Storyboard>
                             </BeginStoryboard>

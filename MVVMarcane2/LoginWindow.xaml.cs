@@ -75,6 +75,9 @@ namespace MVVMarcane2
                 glowIniciarVermell.Opacity = 0;
                 glowIniciarVerd.BeginAnimation(OpacityProperty, fadeOutIn);
                 glowIniciarBlau.BeginAnimation(OpacityProperty, fadeInOut);
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
             }
             else
             {

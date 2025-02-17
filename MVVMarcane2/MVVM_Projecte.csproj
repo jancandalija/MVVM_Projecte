@@ -285,6 +285,7 @@
     <Content Include="audio\mop_the_golden_lotus.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="imatges\icons\botoactiu\selec_4.png" />
     <Resource Include="imatges\marcs\marc_wow.png" />
     <Resource Include="imatges\marcs\warcraft_door_1.jpg" />
     <Resource Include="imatges\brillos\blau.png" />
