@@ -24,5 +24,30 @@
             Value="40,0,0,0" />
 
     </Style>
+    
+    <!--TEXT STYLE FILTRES-->
+
+    <Style 
+    x:Key="Text_StyleFiltres"
+    TargetType="TextBlock">
+
+
+        <Setter 
+        Property="VerticalAlignment"
+        Value="Center" />
+        <Setter 
+        Property="HorizontalAlignment"
+        Value="Center" />
+        <Setter 
+        Property="Foreground"
+        Value="#d7c07c" />
+        <Setter 
+        Property="FontSize"
+        Value="16" />
+        <Setter 
+        Property="Margin"
+        Value="10,0,10,0" />
+
+    </Style>
 
 </ResourceDictionary>

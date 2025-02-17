@@ -21,7 +21,7 @@
     </Window.DataContext>
     
     <Grid>
-        <Border Background="#212529" />
+        <Border Background="#0f0f0f" />
         <!-- #0f0f0f, #212529 -->
         <Grid Width="1280">
             <!--// Base Grid //-->
@@ -33,7 +33,7 @@
             <!--// Navigation Panel //-->
             <Grid HorizontalAlignment="Left"
                   Width="200">
-                <Border Background="#0f0f0f"/>
+                <Border Background="#212121"/>
                 <!-- #0f0f0f, #272B2F -->
 
 
@@ -62,23 +62,22 @@
 
 
 
-                <ScrollViewer Margin="0,100,0,14" VerticalScrollBarVisibility="Hidden">
-
+                <ScrollViewer Margin="0,100,0,14" VerticalScrollBarVisibility="Hidden" BorderThickness="0,0,10,0" BorderBrush="#d7c07c">
 
                     <StackPanel Width="200">
 
                         <!--// Home //-->
                         <Grid>
-                            <Menu:Btn Style="{StaticResource BtnStyle}"
-              Command="{Binding HomeCommand}"
-              IsChecked="True">
+                            <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
+  Command="{Binding HomeCommand}"
+  IsChecked="True">
 
                                 <Grid>
                                     <Image Source="imatges/img_arcane.png"
-            Style="{StaticResource Image_Style}" />
+Style="{StaticResource Image_Style}" />
 
                                     <TextBlock Text="Arcane"
-            Style="{StaticResource Text_Style}" />
+Style="{StaticResource Text_Style}" />
                                 </Grid>
 
                             </Menu:Btn>
@@ -88,16 +87,16 @@
                         <!--// Players //-->
 
                         <Grid>
-                            <Menu:Btn Style="{StaticResource BtnStyle}"
-                  Command="{Binding PlayersCommand}"
-                  IsChecked="False">
+                            <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
+      Command="{Binding ItemsCommand}"
+      IsChecked="False">
 
                                 <Grid>
                                     <Image Source="imatges/img_players.png"
-                       Style="{StaticResource Image_Style}"/>
+           Style="{StaticResource Image_Style}"/>
 
-                                    <TextBlock Text="Players"
-                           Style="{StaticResource Text_Style}"/>
+                                    <TextBlock Text="Items"
+               Style="{StaticResource Text_Style}"/>
                                 </Grid>
 
                             </Menu:Btn>
@@ -107,16 +106,16 @@
                         <!--// Weapons //-->
 
                         <Grid>
-                            <Menu:Btn Style="{StaticResource BtnStyle}"
-                  Command="{Binding WeaponsCommand}"
-                  IsChecked="False">
+                            <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
+      Command="{Binding WeaponsCommand}"
+      IsChecked="False">
 
                                 <Grid>
                                     <Image Source="imatges/img_weapons.png"
-                       Style="{StaticResource Image_Style}"/>
+           Style="{StaticResource Image_Style}"/>
 
                                     <TextBlock Text="Weapons"
-                           Style="{StaticResource Text_Style}"/>
+               Style="{StaticResource Text_Style}"/>
                                 </Grid>
 
                             </Menu:Btn>
@@ -124,6 +123,8 @@
 
 
                     </StackPanel>
+
+
 
 
 

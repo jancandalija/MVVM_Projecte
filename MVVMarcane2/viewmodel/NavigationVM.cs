@@ -20,10 +20,12 @@ namespace MVVMarcane2.viewmodel
         public ICommand HomeCommand { get; set; }
         public ICommand WeaponsCommand { get; set; }
         public ICommand UsuariCommand { get; set; }
+        public ICommand ItemsCommand { get; set; }
 
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Weapons(object obj) => CurrentView = new WeaponsVM(1);
         private void Usuari(object obj) => CurrentView = new UsuariVM(1);
+        private void Items(object obj) => CurrentView = new ItemsVM();
 
         
 
@@ -32,6 +34,7 @@ namespace MVVMarcane2.viewmodel
             HomeCommand = new RelayCommand(Home);
             WeaponsCommand = new RelayCommand(Weapons);
             UsuariCommand = new RelayCommand(Usuari);
+            ItemsCommand = new RelayCommand(Items);
 
             // Startup Page
             CurrentView = new HomeVM();

@@ -1,0 +1,334 @@
+﻿<UserControl x:Class="MVVMarcane2.view.Items"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVMarcane2.view"
+             xmlns:Menuu="clr-namespace:MVVMarcane2.utilities"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1000"
+             Background="#0f0f0f">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="80,80,80,0">
+
+            <StackPanel Orientation="Vertical">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Background="#181818" Height="60">
+
+                    <TextBox Width="200" 
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             BorderThickness="0,0,0,1"
+                             Tag="PROVA"
+                             Foreground="#d7c07c"
+                             Height="40"
+                             Margin="10,0,0,0"
+                             Background="#202020"
+                             FontSize="16"
+                             Padding="20,0,20,0"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <!-- Tipus -->
+                        <Grid>
+                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="True">
+                                <Grid>
+                                    <TextBlock Text="⮞ Tipus" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                </Grid>
+                            </RadioButton>
+                        </Grid>
+
+                        <!-- Raresa -->
+                        <Grid>
+                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="True">
+                                <Grid>
+                                    <TextBlock Text="⮞ Raresa" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                </Grid>
+                            </RadioButton>
+                        </Grid>
+
+                        <!-- Nivell -->
+                        <Grid>
+                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="True">
+                                <Grid>
+                                    <TextBlock Text="⮞ Nivell" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                </Grid>
+                            </RadioButton>
+                        </Grid>
+
+                        <!-- Drop -->
+                        <Grid>
+                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="True">
+                                <Grid>
+                                    <TextBlock Text="⮞ Drop" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                </Grid>
+                            </RadioButton>
+                        </Grid>
+
+                        <!-- Instancia -->
+                        <Grid>
+                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="True">
+                                <Grid>
+                                    <TextBlock Text="⮞ Instància" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                </Grid>
+                            </RadioButton>
+                        </Grid>
+                    </StackPanel>
+
+
+
+                    <!-- FILTRAR -->
+                    <Grid>
+                        <Menuu:Btn GroupName="GrpFiltreApply" Style="{StaticResource BtnStyleFiltresFiltrar}" IsChecked="True">
+                            <Grid>
+                                <TextBlock Text="FILTRAR" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
+                            </Grid>
+                        </Menuu:Btn>
+                    </Grid>
+
+
+                </StackPanel>
+
+
+
+
+
+                <!-- Filtre (Tipus) -->
+
+                <StackPanel Background="#202020">
+                    <StackPanel Orientation="Horizontal">
+
+
+                        <!--///ARMADURA///-->
+                        
+
+                        <StackPanel Orientation="Vertical">
+
+                            <TextBlock Text="Armadura" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+
+                            <!-- Head -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Head" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Neck -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Neck" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Cloak -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Cloak" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Chest -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Chest" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Wrist" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Hands" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Waist" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Legs" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Feet" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Ring" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Trinket" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Shirt -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Shirt" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+
+
+                            <!--///TIPUS///-->
+
+                            <StackPanel Orientation="Vertical">
+
+                                <TextBlock Text="Tipus" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold" Foreground="DarkRed"/>
+
+                                <!-- Head -->
+                                <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                    <Grid>
+                                        <TextBlock Text="Cloth" Style="{StaticResource Text_StyleFiltres}" Foreground="DarkRed"/>
+                                    </Grid>
+                                </CheckBox>
+
+                                <!-- Neck -->
+                                <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                    <Grid>
+                                        <TextBlock Text="Leather" Style="{StaticResource Text_StyleFiltres}" Foreground="DarkRed"/>
+                                    </Grid>
+                                </CheckBox>
+
+                                <!-- Cloak -->
+                                <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                    <Grid>
+                                        <TextBlock Text="Mail" Style="{StaticResource Text_StyleFiltres}" Foreground="DarkRed"/>
+                                    </Grid>
+                                </CheckBox>
+
+                                <!-- Chest -->
+                                <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                    <Grid>
+                                        <TextBlock Text="Plate" Style="{StaticResource Text_StyleFiltres}" Foreground="DarkRed"/>
+                                    </Grid>
+                                </CheckBox>
+
+                            </StackPanel>
+
+
+                        </StackPanel>
+
+
+
+
+                        <StackPanel Orientation="Vertical">
+
+                            <TextBlock Text="Arma" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+
+                            <!-- Tipus -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="One-Handed Sword" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Raresa -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="One-Handed Axe" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Nivell -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="One-Handed Mace" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Drop -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Dagger" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Instancia -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Instància" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                        </StackPanel>
+
+
+
+                        <StackPanel Orientation="Vertical">
+
+                            <TextBlock Text="Altres" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+
+                            <!-- Quest -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Quest" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Consumibles -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Consumible" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Materials -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Material" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Tabard -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Tabard" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                            <!-- Altres -->
+                            <CheckBox IsChecked="False" VerticalContentAlignment="Center" Margin="10,0,0,0">
+                                <Grid>
+                                    <TextBlock Text="Altres" Style="{StaticResource Text_StyleFiltres}"/>
+                                </Grid>
+                            </CheckBox>
+
+                        </StackPanel>
+
+
+
+
+                    </StackPanel>
+                </StackPanel>
+                
+                
+                
+                
+                
+            </StackPanel>
+            
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -73,11 +73,15 @@
     <Compile Include="utilities\RelayCommand.cs" />
     <Compile Include="utilities\ViewModelBase.cs" />
     <Compile Include="viewmodel\HomeVM.cs" />
+    <Compile Include="viewmodel\ItemsVM.cs" />
     <Compile Include="viewmodel\NavigationVM.cs" />
     <Compile Include="viewmodel\UsuariVM.cs" />
     <Compile Include="viewmodel\WeaponsVM.cs" />
     <Compile Include="view\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\Items.xaml.cs">
+      <DependentUpon>Items.xaml</DependentUpon>
     </Compile>
     <Compile Include="view\Weapons.xaml.cs">
       <DependentUpon>Weapons.xaml</DependentUpon>
@@ -123,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\Items.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
