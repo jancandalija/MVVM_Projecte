@@ -322,13 +322,48 @@
 
                     </StackPanel>
                 </StackPanel>
-                
-                
+
+
+                <StackPanel>
+                    
+                    <ListBox>
+
+                        <ListBox.ItemTemplate>
+
+                            <DataTemplate>
+                                
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <TextBlock Grid.Column="0"/>
+                                    <TextBlock Grid.Column="1"/>
+                                    <TextBlock Grid.Column="2"/>
+                                    <TextBlock Grid.Column="3"/>
+                                    
+                                </Grid>
+                                
+                            </DataTemplate>
+            
+                        </ListBox.ItemTemplate>
+        
+                    </ListBox>
+                    
+                </StackPanel>
                 
                 
                 
             </StackPanel>
             
         </ScrollViewer>
+        
     </Grid>
+    
 </UserControl>

@@ -14,7 +14,8 @@ namespace MVVMarcane2.viewmodel
         private const string USUARI_NOM = "usuariNom";
         private const string USUARI_PWD = "usuariPwd";
 
-        private DataBaseConnection db;
+        //private DataBaseConnection db;
+        private DataBaseConnectionMySQL db;
         private Usuari usuari;
 
         public int UsuariId
@@ -45,7 +46,8 @@ namespace MVVMarcane2.viewmodel
 
             if (usuariId > 0)
             {
-                db = new DataBaseConnection();
+                //db = new DataBaseConnection();
+                db = new DataBaseConnectionMySQL();
 
                 db.useSql(sqlGetById());
                 db.addWithValue("@" + USUARI_ID, usuariId);
@@ -67,7 +69,7 @@ namespace MVVMarcane2.viewmodel
 
             if (usuariNom != null && usuariNom != "" && usuariPwd != null && usuariPwd != "")
             {
-                db = new DataBaseConnection();
+                db = new DataBaseConnectionMySQL();
 
                 db.useSql(sqlGetByNomIPwd());
                 db.addWithValue("@" + USUARI_NOM, usuariNom);
