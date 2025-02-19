@@ -9,6 +9,7 @@ using MVVMarcane2.model;
 using static Mysqlx.Notice.Warning.Types;
 using System.IO.Ports;
 using System.Xml.Linq;
+using System.Data;
 
 namespace MVVMarcane2.viewmodel
 {
@@ -56,13 +57,26 @@ namespace MVVMarcane2.viewmodel
 			db.useSql(sqlGetAll());
 			db.fill();
 
-			for (int i = 0; i < db.getDataCount(); i++)
+			//for (int i = 0; i < db.getDataCount(); i++)
+			//{
+			//	ItemId = (int)db.getPrimerResultat("ItemId");
+			//	Name = (string)db.getPrimerResultat("Name");
+			//	ILevel = (int)db.getPrimerResultat("ILevel");
+			//	Requeriment = (int)db.getPrimerResultat("Requeriment");
+			//	itemsList.Add(items);
+			//}
+
+			foreach (DataRow row in db.getData().Rows)
 			{
-				ItemId = (int)db.getPrimerResultat("ItemId");
-				Name = (string)db.getPrimerResultat("Name");
-				ILevel = (int)db.getPrimerResultat("ILevel");
-				Requeriment = (int)db.getPrimerResultat("Requeriment");
-				itemsList.Add(items);
+				Items item = new Items
+				{
+					ItemId = (int)row["ItemId"],
+					Rarity = (int)row["Rarity"],
+					Name = (string)row["Name"],
+					ILevel = (int)row["ILevel"],
+					Requeriment = (int)row["Requeriment"],
+				};
+				itemsList.Add(item);
 			}
 		}
 

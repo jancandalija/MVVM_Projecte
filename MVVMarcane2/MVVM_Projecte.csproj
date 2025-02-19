@@ -136,6 +136,7 @@
     <Compile Include="utilities\Btn.cs" />
     <Compile Include="utilities\RelayCommand.cs" />
     <Compile Include="utilities\ViewModelBase.cs" />
+    <Compile Include="viewmodel\converters\RarityToColorConverter.cs" />
     <Compile Include="viewmodel\HomeVM.cs" />
     <Compile Include="viewmodel\ItemsVM.cs" />
     <Compile Include="viewmodel\NavigationVM.cs" />

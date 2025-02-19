@@ -5,11 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMarcane2.view"
              xmlns:Menuu="clr-namespace:MVVMarcane2.utilities"
+             xmlns:converters="clr-namespace:MVVMarcane2.viewmodel.converters"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1000"
              Background="#0f0f0f">
+    
+    <UserControl.Resources>
+        
+        <converters:RarityToColorConverter x:Key="RarityToColorConverter"/>
+
+        <Style  TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="#212121"></Setter>
+        </Style>
+        
+    </UserControl.Resources>
+    
+    
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="80,80,80,0">
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="50,50,50,0">
 
             <StackPanel Orientation="Vertical">
 
@@ -325,28 +338,55 @@
 
 
                 <StackPanel>
-                    
-                    <ListBox Name="TaulerItems">
+
+                    <ListBox Name="TaulerItems" Background="#212121" BorderThickness="0,1,0,1" SelectionMode="Single">
 
                         <ListBox.ItemTemplate>
 
                             <DataTemplate>
-                                
-                                <Grid>
+
+                                <Grid Background="#212121" Cursor="Hand" Margin="0">
                                     <Grid.ColumnDefinitions>
 
+                                        <!--Width total és 900-->
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="500"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="88"/>
 
                                     </Grid.ColumnDefinitions>
 
 
-                                    <TextBlock Grid.Column="0" Text="{Binding Path=Name}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Path=ILevel}"/>
-                                    <TextBlock Grid.Column="2" Text="{Binding Path=Requeriment}"/>
-                                    <TextBlock Grid.Column="3" Text="{Binding Path=DropChance}"/>
+                                    <Grid Grid.Column="0" Height="30">
+                                        <TextBlock Text="{Binding Path=ItemId}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Height="30">
+                                        <TextBlock Text="{Binding Path=Name}" Foreground="{Binding Path=Rarity, Converter={StaticResource RarityToColorConverter}}" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                    </Grid>
+                                    <Grid Grid.Column="2" Height="30">
+                                        <TextBlock Text="ilvl" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
+                                    </Grid>
+                                    <Grid Grid.Column="3" Height="30">
+                                        <TextBlock Text="{Binding Path=ILevel}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Column="4" Height="30">
+                                        <TextBlock Text="lvl" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
+                                    </Grid>
+                                    <Grid Grid.Column="5" Height="30">
+                                        <TextBlock Text="{Binding Path=Requeriment}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Column="6" Height="30">
+                                        <TextBlock Text="%" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
+                                    </Grid>
+                                    <Grid Grid.Column="7" Height="30">
+                                        <TextBlock Text="{Binding Path=DropChance}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    
+                                    
                                     
                                 </Grid>
                                 
