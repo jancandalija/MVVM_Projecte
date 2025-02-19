@@ -39,6 +39,11 @@ namespace MVVMarcane2.model
 			return dataTable;
 		}
 
+		public int getDataCount()
+		{
+			return dataTable.Rows.Count;
+		}
+
 		public object getPrimerResultat(string clau)
 		{
 			return dataTable.Rows[0][clau];

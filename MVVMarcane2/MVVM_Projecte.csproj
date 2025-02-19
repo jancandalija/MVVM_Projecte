@@ -69,6 +69,7 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -129,6 +130,7 @@
     </Compile>
     <Compile Include="model\DataBaseConnection.cs" />
     <Compile Include="model\DataBaseConnectionMySQL.cs" />
+    <Compile Include="model\Items.cs" />
     <Compile Include="model\Usuari.cs" />
     <Compile Include="model\Weapons.cs" />
     <Compile Include="utilities\Btn.cs" />
@@ -219,10 +221,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="fonts\Rubik-Medium.ttf" />
-    <Resource Include="fonts\Rubik-Regular.ttf" />
-    <Resource Include="fonts\LifeCraft_Font.ttf" />
-    <Resource Include="fonts\friz-quadrata-regular.ttf" />
+    <Content Include="fonts\Rubik-Medium.ttf" />
+    <Content Include="fonts\Rubik-Regular.ttf" />
+    <Content Include="fonts\LifeCraft_Font.ttf" />
+    <Content Include="fonts\friz-quadrata-regular.ttf" />
     <None Include="modeldbDataSet.xsc">
       <DependentUpon>modeldbDataSet.xsd</DependentUpon>
     </None>
