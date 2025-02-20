@@ -107,7 +107,7 @@
                         
 
                         <Trigger 
-                            Property="IsFocused"
+                            Property="IsChecked"
                             Value="True">
 
                             <Setter 
@@ -360,7 +360,7 @@
                         </EventTrigger>
 
                         <Trigger 
-                        Property="IsFocused"
+                        Property="IsChecked"
                         Value="True">
 
                             <Setter 
@@ -462,7 +462,7 @@ TargetType="RadioButton">
                         </EventTrigger>
 
                         <Trigger 
-                    Property="IsFocused"
+                    Property="IsChecked"
                     Value="True">
 
                             <Setter 
