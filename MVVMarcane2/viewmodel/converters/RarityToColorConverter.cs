@@ -17,17 +17,17 @@ namespace MVVMarcane2.viewmodel.converters
 			switch (rarity)
 			{
 				case 0:
-					return Brushes.Gray; // Común
+					return "#9e9e9e"; // Común
 				case 1:
 					return Brushes.White; // Común
 				case 2:
-					return Brushes.Green; // Poco común
+					return "#1eff00"; // Poco común
 				case 3:
-					return Brushes.Blue; // Raro
+					return "#0070dd"; // Raro
 				case 4:
-					return Brushes.Purple; // Épico
+					return "#a334ed"; // Épico
 				case 5:
-					return Brushes.Orange; // Legendario
+					return "#ff8000"; // Legendario
 				default:
 					return Brushes.Black; // Desconocido
 			}

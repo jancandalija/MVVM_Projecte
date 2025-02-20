@@ -37,13 +37,13 @@
                 <!-- #0f0f0f, #272B2F -->
 
 
-                <Image Source="/imatges/marcs/warcraft_door_1.jpg" 
+                <Image Source="/imatges/marcs/LoadScreen_Pandaria.jpg" 
                        VerticalAlignment="Top"
                        Width="200"/>
 
                 <Image Source="/imatges/marcs/marc_wow.png"
                        VerticalAlignment="Top"
-                       Margin="0,88,0,0"
+                       Margin="0,145,0,0"
                        Width="238"
                        HorizontalAlignment="Center"
                        IsHitTestVisible="False"/>
@@ -62,7 +62,7 @@
 
 
 
-                <ScrollViewer Margin="0,100,0,14" VerticalScrollBarVisibility="Hidden" BorderThickness="0,0,10,0" BorderBrush="#d7c07c">
+                <ScrollViewer Margin="0,160,0,14" VerticalScrollBarVisibility="Hidden" BorderThickness="0,0,10,0" BorderBrush="#d7c07c">
 
                     <StackPanel Width="200">
 
@@ -134,7 +134,15 @@ Style="{StaticResource Text_Style}" />
 
             </Grid>
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Background="#0f0f0f">
+                <!--<Image 
+    Source="/imatges/login_background/pandaria_bg.jpg" 
+    Stretch="Fill"
+    RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Image.RenderTransform>
+                </Image>-->
                 <ContentControl x:Name="Page" Content="{Binding CurrentView}"/>
             </Grid>
 
