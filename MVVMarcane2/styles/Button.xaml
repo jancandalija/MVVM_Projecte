@@ -40,40 +40,13 @@
 
                     <ControlTemplate.Triggers>
 
-                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
-
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation 
-                                        Storyboard.TargetName="BorderBackground"
-                                        Storyboard.TargetProperty="Color"
-                                        From="Transparent"
-                                        To="#00755a"
-                                        Duration="0:0:0.0" />
-                                </Storyboard>
-                            </BeginStoryboard>
-
-                        </EventTrigger>
-
-                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
-
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation 
-                                        Storyboard.TargetName="BorderBackground"
-                                        Storyboard.TargetProperty="Color"
-                                        From="#00755a"
-                                        To="Transparent"
-                                        Duration="0:0:0.0" />
-                                </Storyboard>
-                            </BeginStoryboard>
-
-                        </EventTrigger>
-
-                        <!-- A l'hora de seleccionar, seteja la inia blanca de forma permanent i posa el background -->
                         <Trigger Property="IsChecked" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#00755a" />
                             <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#00755a" />
                         </Trigger>
 
                     </ControlTemplate.Triggers>
@@ -218,38 +191,12 @@
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        
-                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
-
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation 
-                                        Storyboard.TargetName="BorderBackground"
-                                        Storyboard.TargetProperty="Color"
-                                        From="#202020"
-                                        To="#00755a"
-                                        Duration="0:0:0.0" />
-                                </Storyboard>
-                            </BeginStoryboard>
-
-                        </EventTrigger>
-
-                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
-
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation 
-                                        Storyboard.TargetName="BorderBackground"
-                                        Storyboard.TargetProperty="Color"
-                                        From="#00755a"
-                                        To="#202020"
-                                        Duration="0:0:0.0" />
-                                </Storyboard>
-                            </BeginStoryboard>
-
-                        </EventTrigger>
 
                         <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#00755a" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#00755a" />
                         </Trigger>
 
@@ -299,38 +246,8 @@
 
                     <ControlTemplate.Triggers>
 
-                        <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
-
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation 
-                                        Storyboard.TargetName="BorderBackground"
-                                        Storyboard.TargetProperty="Color"
-                                        From="#212121"
-                                        To="DimGray"
-                                        Duration="0:0:0.0" />
-                                </Storyboard>
-                            </BeginStoryboard>
-
-                        </EventTrigger>
-
-                        <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
-
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation 
-                                        Storyboard.TargetName="BorderBackground"
-                                        Storyboard.TargetProperty="Color"
-                                        From="DimGray"
-                                        To="#212121"
-                                        Duration="0:0:0.0" />
-                                </Storyboard>
-                            </BeginStoryboard>
-
-                        </EventTrigger>
-
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#00755a" />
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#8C1616" />
                         </Trigger>
 
                     </ControlTemplate.Triggers>
