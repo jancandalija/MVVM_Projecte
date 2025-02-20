@@ -368,7 +368,7 @@
 
                             <DataTemplate>
 
-                                <Grid Margin="0">
+                                <Grid Margin="0" Height="40">
                                     <Grid.ColumnDefinitions>
 
                                         <!--Width total és 900-->
@@ -386,35 +386,35 @@
 
                                     
                                     
-                                    <Grid Grid.Column="0" Height="30" VerticalAlignment="Top">
+                                    <Grid Grid.Column="0" VerticalAlignment="Center">
                                         
                                         <TextBlock Text="{Binding Path=ItemId}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
                                     </Grid>
-                                    <Grid Grid.Column="1" Height="30">
+                                    <Grid Grid.Column="1">
                                         
                                         <TextBlock Text="{Binding Path=Name}" Foreground="{Binding Path=Rarity, Converter={StaticResource RarityToColorConverter}}" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
                                     </Grid>
-                                    <Grid Grid.Column="2" Height="30">
+                                    <Grid Grid.Column="2">
                                         
                                         <TextBlock Text="ilvl" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
                                     </Grid>
-                                    <Grid Grid.Column="3" Height="30">
+                                    <Grid Grid.Column="3">
                                         
                                         <TextBlock Text="{Binding Path=ILevel}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
                                     </Grid>
-                                    <Grid Grid.Column="4" Height="30">
+                                    <Grid Grid.Column="4">
                                         
                                         <TextBlock Text="lvl" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
                                     </Grid>
-                                    <Grid Grid.Column="5" Height="30">
+                                    <Grid Grid.Column="5">
                                         
                                         <TextBlock Text="{Binding Path=Requeriment}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
                                     </Grid>
-                                    <Grid Grid.Column="6" Height="30">
+                                    <Grid Grid.Column="6">
                                         
                                         <TextBlock Text="%" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
                                     </Grid>
-                                    <Grid Grid.Column="7" Height="30">
+                                    <Grid Grid.Column="7">
                                         
                                         <TextBlock Text="{Binding Path=DropChance}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
                                     </Grid>
