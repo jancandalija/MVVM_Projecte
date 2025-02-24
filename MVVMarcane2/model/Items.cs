@@ -11,7 +11,9 @@ namespace MVVMarcane2.model
 {
 	public class Items
 	{
+		public static string TABLE_NAME = "Items";
 
+		[Key]
 		private int itemId;
 		private string name;
 		private int rarity;

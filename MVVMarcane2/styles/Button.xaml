@@ -214,7 +214,7 @@
 
     <!-- Botons apartat Filtres : BOTO FILTRAR -->
 
-    <Style x:Key="BtnStyleFiltresFiltrar" TargetType="RadioButton">
+    <Style x:Key="BtnStyleFiltresFiltrar" TargetType="Button">
 
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="HorizontalAlignment" Value="Center" />
@@ -225,7 +225,7 @@
             
             <Setter.Value>
                 
-                <ControlTemplate TargetType="RadioButton">
+                <ControlTemplate TargetType="Button">
 
                     <Border 
                         x:Name="border"

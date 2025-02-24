@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MVVMarcane2.model;
 using MVVMarcane2.viewmodel;
 
 namespace MVVMarcane2.view
@@ -26,6 +27,59 @@ namespace MVVMarcane2.view
 			InitializeComponent();
 
 			TaulerItems.ItemsSource = new ItemsVM().getItemsList();
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			// Click al botó FILTRAR
+
+			
+
+			ItemsFiltre itemsFiltre = new ItemsFiltre(
+				(bool)checkHands.IsChecked,
+				(bool)checkNeck.IsChecked,
+				(bool)checkCloak.IsChecked,
+				(bool)checkChest.IsChecked,
+				(bool)checkWrist.IsChecked,
+				(bool)checkHands.IsChecked,
+				(bool)checkWaist.IsChecked,
+				(bool)checkLegs.IsChecked,
+				(bool)checkFeet.IsChecked,
+				(bool)checkRing.IsChecked,
+				(bool)checkTrinket.IsChecked,
+				(bool)checkShirt.IsChecked,
+
+				(bool)checkCloth.IsChecked,
+				(bool)checkLeather.IsChecked,
+				(bool)checkMail.IsChecked,
+				(bool)checkPlate.IsChecked,
+
+				(bool)checkOneHandedSword.IsChecked,
+				(bool)checkOneHandedAxe.IsChecked,
+				(bool)checkOneHandedMace.IsChecked,
+				(bool)checkTwoHandedSword.IsChecked,
+				(bool)checkTwoHandedAxe.IsChecked,
+				(bool)checkTwoHandedMace.IsChecked,
+				(bool)checkStave.IsChecked,
+				(bool)checkDagger.IsChecked,
+				(bool)checkFistWeapon.IsChecked,
+				(bool)checkPolearm.IsChecked,
+				(bool)checkBow.IsChecked,
+				(bool)checkCrossbow.IsChecked,
+				(bool)checkGun.IsChecked,
+				(bool)checkWand.IsChecked,
+				(bool)checkThrown.IsChecked,
+				(bool)checkMiscellaneous.IsChecked,
+
+				(bool)checkQuest.IsChecked,
+				(bool)checkConsumible.IsChecked,
+				(bool)checkMaterial.IsChecked,
+				(bool)checkTabard.IsChecked,
+				(bool)checkOther.IsChecked
+			);
+
+			TaulerItems.ItemsSource = new ItemsVM(itemsFiltre).getItemsList();
+
 		}
 	}
 }

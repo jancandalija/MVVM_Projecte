@@ -131,6 +131,8 @@
     <Compile Include="model\DataBaseConnection.cs" />
     <Compile Include="model\DataBaseConnectionMySQL.cs" />
     <Compile Include="model\Items.cs" />
+    <Compile Include="model\ItemsFiltre.cs" />
+    <Compile Include="model\ItemType.cs" />
     <Compile Include="model\Usuari.cs" />
     <Compile Include="model\Weapons.cs" />
     <Compile Include="utilities\Btn.cs" />
