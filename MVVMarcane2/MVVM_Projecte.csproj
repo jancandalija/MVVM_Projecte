@@ -220,6 +220,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="imatges\llistat\bg_filtres.png" />
+    <Resource Include="imatges\llistat\notick_wow.png" />
+    <Resource Include="imatges\llistat\tick_wow.png" />
+    <Resource Include="imatges\llistat\fila3.png" />
+    <Resource Include="imatges\llistat\fila2.png" />
+    <Resource Include="imatges\llistat\fila.png" />
+    <Resource Include="imatges\backgrounds_bamboo\bg_pandaria_10.jpg" />
+    <Resource Include="imatges\backgrounds_bamboo\dragon_circle_frame_1.png" />
+    <Resource Include="imatges\backgrounds_bamboo\drac_or_marc_boto.jpg" />
+    <Resource Include="imatges\backgrounds_bamboo\bamboo_pattern.png" />
+    <Resource Include="imatges\backgrounds_bamboo\traditional-gold-chinese-dragon-design-vector.jpg" />
+    <Resource Include="imatges\backgrounds_bamboo\chino_bamboo_2.jpg" />
+    <Resource Include="imatges\backgrounds_bamboo\chino_bamboo_1.jpg" />
     <Resource Include="imatges\marcs\wowlogo.png" />
     <Resource Include="imatges\marcs\LoadScreen_Pandaria.jpg" />
     <Resource Include="imatges\marcs\wow_door_1.png" />
@@ -372,5 +385,6 @@
     <Resource Include="imatges\versions\versio_0_2_0_01_02_2025.png" />
     <Resource Include="imatges\audio\audio_vector.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

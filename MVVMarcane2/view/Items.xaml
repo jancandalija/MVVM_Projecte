@@ -5,22 +5,29 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMarcane2.view"
              xmlns:Menuu="clr-namespace:MVVMarcane2.utilities"
+             xmlns:model="clr-namespace:MVVMarcane2.model"
              xmlns:converters="clr-namespace:MVVMarcane2.viewmodel.converters"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1000"
+             
              >
-    
+
+    <UserControl.DataContext>
+        <model:Items></model:Items>
+    </UserControl.DataContext>
+
     <UserControl.Resources>
-        
+
         <converters:RarityToColorConverter x:Key="RarityToColorConverter"/>
 
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
 
-        
+
 
         <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Background" Value="#212121"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <!--"#212121"-->
             <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
             <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
             <Setter Property="Padding" Value="2,0,0,0"/>
@@ -28,13 +35,39 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListBoxItem}">
 
+
                         <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <Grid>
+
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Image x:Name="Indicator"
+    Source="/imatges/llistat/tick_wow.png"
+    Height="20"
+    Width="20"
+    Margin="0,0,20,0"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Center"
+    Visibility="Hidden"/>
+                                <Image x:Name="IndicatorOFF"
+Source="/imatges/llistat/notick_wow.png"
+Height="20"
+Width="20"
+Margin="0,0,20,0"
+HorizontalAlignment="Right"
+VerticalAlignment="Center"
+Visibility="Hidden"/>
+                            </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="true">
-                                <Setter Property="Background" Value="#313131"/>
+                                <!-- <Setter Property="Background" Value="#313131"/> -->
+                                <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
                             </Trigger>
+                            <Trigger Property="IsSelected" Value="false">
+                                <!-- <Setter Property="Background" Value="#313131"/> -->
+                                <Setter TargetName="IndicatorOFF" Property="Visibility" Value="Visible" />
+                            </Trigger>
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -42,87 +75,127 @@
         </Style>
 
     </UserControl.Resources>
-    
-    
+
+
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="50,50,50,0">
+
+        <Canvas>
+            <Image Source="/imatges/backgrounds_bamboo/bg_pandaria_10.jpg" Width="1290">
+                <Image.Effect>
+                    <BlurEffect Radius="20"/>
+                </Image.Effect>
+            </Image>
+        </Canvas>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="50,20,50,0">
 
             <StackPanel Orientation="Vertical">
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Background="#181818" Height="60">
+                <Grid Height="190" Width="800">
 
-                    <TextBox Width="200" 
+                    <Image Source="/imatges/llistat/bg_filtres.png" Visibility="Visible"
+
+                            RenderTransformOrigin="0.5,0.5" Margin="-30,-29,-30,-34"/>
+
+                    <!---#181818
+                    Source="/imatges/text/textframe3.png"-->
+
+
+                    <StackPanel Orientation="Horizontal" Background="Transparent" Height="60" Margin="-8,89,8,41">
+
+                        <TextBox Width="200"
                              HorizontalContentAlignment="Left"
                              VerticalContentAlignment="Center"
                              BorderThickness="0,0,0,1"
                              Tag="PROVA"
                              Foreground="#d7c07c"
+                             CaretBrush="#d7c07c"
                              Height="40"
-                             Margin="10,0,0,0"
-                             Background="#202020"
+                             Margin="30,0,0,0"
+                             Background="Transparent"
                              FontSize="16"
                              Padding="20,0,20,0"/>
 
-                    <StackPanel Orientation="Horizontal">
-                        <!-- Tipus -->
+                        <!---#202020-->
+
+                        <StackPanel Orientation="Horizontal">
+                            <!-- Tipus -->
+                            <Grid>
+                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False" x:Name="RBFiltresItems">
+                                    <Grid>
+                                        <TextBlock Text="Tipus" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                    </Grid>
+                                </RadioButton>
+                            </Grid>
+
+                            <!-- Raresa -->
+                            <Grid>
+                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
+                                    <Grid>
+                                        <TextBlock Text="Raresa" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                    </Grid>
+                                </RadioButton>
+                            </Grid>
+
+                            <!-- Nivell -->
+                            <Grid>
+                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
+                                    <Grid>
+                                        <TextBlock Text="Nivell" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                    </Grid>
+                                </RadioButton>
+                            </Grid>
+
+                            <!-- Drop -->
+                            <Grid>
+                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
+                                    <Grid>
+                                        <TextBlock Text="Drop" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                    </Grid>
+                                </RadioButton>
+                            </Grid>
+
+                            <!-- Instancia -->
+                            <Grid>
+                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
+                                    <Grid>
+
+                                        <TextBlock Text="Instància" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                    </Grid>
+                                </RadioButton>
+                            </Grid>
+                        </StackPanel>
+
+
+
+                        <!-- FILTRAR -->
                         <Grid>
-                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False" x:Name="RBFiltresItems">
+                            <Button Style="{StaticResource BtnStyleFiltresFiltrar}" Click="Button_Click">
                                 <Grid>
-                                    <TextBlock Text="⮞ Tipus" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                    <Image Source="/imatges/backgrounds_bamboo/drac_or_marc_boto.jpg"
+                                           Stretch="Fill"
+                                           RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+                                    </Image>
+                                    <TextBlock Text="FILTRAR" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
                                 </Grid>
-                            </RadioButton>
+                            </Button>
                         </Grid>
 
-                        <!-- Raresa -->
+                        <!-- NETEJAR -->
                         <Grid>
-                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
+                            <Button Style="{StaticResource BtnStyleFiltresFiltrar}">
                                 <Grid>
-                                    <TextBlock Text="⮞ Raresa" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                    <TextBlock Text="🗙︎" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
                                 </Grid>
-                            </RadioButton>
+                            </Button>
                         </Grid>
 
-                        <!-- Nivell -->
-                        <Grid>
-                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
-                                <Grid>
-                                    <TextBlock Text="⮞ Nivell" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                </Grid>
-                            </RadioButton>
-                        </Grid>
 
-                        <!-- Drop -->
-                        <Grid>
-                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
-                                <Grid>
-                                    <TextBlock Text="⮞ Drop" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                </Grid>
-                            </RadioButton>
-                        </Grid>
-
-                        <!-- Instancia -->
-                        <Grid>
-                            <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
-                                <Grid>
-                                    <TextBlock Text="⮞ Instància" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                </Grid>
-                            </RadioButton>
-                        </Grid>
                     </StackPanel>
 
 
+                </Grid>
 
-                    <!-- FILTRAR -->
-                    <Grid>
-                        <Button Style="{StaticResource BtnStyleFiltresFiltrar}" Click="Button_Click">
-                            <Grid>
-                                <TextBlock Text="FILTRAR" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
-                            </Grid>
-                        </Button>
-                    </Grid>
-
-
-                </StackPanel>
 
 
 
@@ -135,7 +208,7 @@
 
 
                         <!--///ARMADURA///-->
-                        
+
 
                         <StackPanel Orientation="Vertical">
 
@@ -439,13 +512,33 @@
 
                 <StackPanel Margin="0,10,0,0" Width="1000">
 
-                    <ListBox Name="TaulerItems" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" Width="1000" Padding="0">
+                    <Grid Height="100" Width="900">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/imatges/llistat/fila3.png"></ImageBrush>
+                        </Grid.Background>
+
+
+
+                        <StackPanel Width="850" Height="100" HorizontalAlignment="Left" Orientation="Vertical">
+                            <TextBlock Name="TextBlockItemId" Text=""  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Name="TextBlockItemNom" Text=""   Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+
+
+
+                    </Grid>
+
+                    <ListBox Name="TaulerItems" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" Width="900" Padding="0" SelectionChanged="TaulerItems_SelectionChanged">
 
                         <ListBox.ItemTemplate>
 
                             <DataTemplate>
 
-                                <Grid Margin="0" Height="40">
+                                <Grid Margin="0,0,0,0" Height="40">
+                                    <Grid.Background>
+                                        <ImageBrush ImageSource="/imatges/llistat/fila3.png"></ImageBrush>
+                                    </Grid.Background>
+
                                     <Grid.ColumnDefinitions>
 
                                         <!--Width total és 900-->
@@ -454,66 +547,67 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="125"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="88"/>
 
                                     </Grid.ColumnDefinitions>
 
 
-                                    
-                                    
+
+
                                     <Grid Grid.Column="0" VerticalAlignment="Center">
-                                        
+
                                         <TextBlock Text="{Binding Path=ItemId}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
                                     </Grid>
                                     <Grid Grid.Column="1">
-                                        
+
                                         <TextBlock Text="{Binding Path=Name}" Foreground="{Binding Path=Rarity, Converter={StaticResource RarityToColorConverter}}" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
                                     </Grid>
                                     <Grid Grid.Column="2">
-                                        
+
                                         <TextBlock Text="ilvl" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
                                     </Grid>
                                     <Grid Grid.Column="3">
-                                        
+
                                         <TextBlock Text="{Binding Path=ILevel}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
                                     </Grid>
                                     <Grid Grid.Column="4">
-                                        
+
                                         <TextBlock Text="lvl" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
                                     </Grid>
                                     <Grid Grid.Column="5">
-                                        
+
                                         <TextBlock Text="{Binding Path=Requeriment}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
                                     </Grid>
                                     <Grid Grid.Column="6">
-                                        
+
                                         <TextBlock Text="%" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
                                     </Grid>
                                     <Grid Grid.Column="7">
-                                        
+
                                         <TextBlock Text="{Binding Path=DropChance}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
                                     </Grid>
-                                    
-                                    
-                                    
+
+
+
                                 </Grid>
-                                
+
+
                             </DataTemplate>
-            
+
                         </ListBox.ItemTemplate>
-        
+
                     </ListBox>
-                    
+
                 </StackPanel>
-                
-                
-                
+
+
+
             </StackPanel>
-            
+
         </ScrollViewer>
-        
+
     </Grid>
-    
+
 </UserControl>

@@ -14,7 +14,7 @@
         Background="Transparent"
         MouseDown="Window_MouseDown"
         BorderBrush="#a87c1d"
-        BorderThickness="0.5">
+        BorderThickness="1">
 
     <Grid HorizontalAlignment="Center">
         <Border>
@@ -130,6 +130,7 @@
 
 
                                 <TextBox 
+                                    FontFamily="Friz Quadrata"
                                     x:Name="userEntry"
                                     CharacterCasing="Lower"
                                     Style="{StaticResource TextBoxLogin}"
@@ -162,6 +163,7 @@
 
                             <StackPanel Orientation="Horizontal" Width="150">
                                 <PasswordBox 
+                                    FontFamily="Friz Quadrata"
                                     x:Name="pwdEntry"
                                     Padding="5,0,0,0"
                                     Style="{StaticResource PasswordLogin}"
@@ -327,7 +329,7 @@
         <!--
         Apunts Jan
         Caracters especials:
-        🍁✗👤✱⟲⏯︎🗕︎🗖︎🗙︎
+        🍁✗👤✱⟲⏯︎🗕︎🗖︎🗙︎⮞
         
 -->
     </Grid>

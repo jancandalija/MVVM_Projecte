@@ -22,6 +22,9 @@ namespace MVVMarcane2.view
 	/// </summary>
 	public partial class Items : UserControl
 	{
+
+		ItemsVM itemSeleccionat;
+
 		public Items()
 		{
 			InitializeComponent();
@@ -36,7 +39,7 @@ namespace MVVMarcane2.view
 			
 
 			ItemsFiltre itemsFiltre = new ItemsFiltre(
-				(bool)checkHands.IsChecked,
+				(bool)checkHead.IsChecked,
 				(bool)checkNeck.IsChecked,
 				(bool)checkCloak.IsChecked,
 				(bool)checkChest.IsChecked,
@@ -79,6 +82,22 @@ namespace MVVMarcane2.view
 			);
 
 			TaulerItems.ItemsSource = new ItemsVM(itemsFiltre).getItemsList();
+
+		}
+
+		private void TaulerItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			itemSeleccionat = new ItemsVM(TaulerItems.SelectedItem as model.Items);
+			if (itemSeleccionat != null)
+			{
+				TextBlockItemId.Text = itemSeleccionat.ItemId.ToString();
+				TextBlockItemNom.Text = itemSeleccionat.Name;
+			}
+			
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
 
 		}
 	}

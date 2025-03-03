@@ -12,7 +12,9 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Background="Transparent">
+        Background="Transparent"
+        BorderBrush="#a87c1d"
+        BorderThickness="1">
 
     <Window.DataContext>
         <vm:NavigationVM>
@@ -29,6 +31,18 @@
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="1080" />
             </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1" Background="#0f0f0f">
+                <!--<Image 
+Source="/imatges/login_background/pandaria_bg.jpg" 
+Stretch="Fill"
+RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <ScaleTransform ScaleX="-1"/>
+                </Image.RenderTransform>
+            </Image>-->
+                <ContentControl x:Name="Page" Content="{Binding CurrentView}"/>
+            </Grid>
 
             <!--// Navigation Panel //-->
             <Grid HorizontalAlignment="Left"
@@ -76,7 +90,7 @@
                                     <Image Source="imatges/img_arcane.png"
 Style="{StaticResource Image_Style}" />
 
-                                    <TextBlock Text="Arcane"
+                                    <TextBlock Text="Inici"
 Style="{StaticResource Text_Style}" />
                                 </Grid>
 
@@ -103,7 +117,7 @@ Style="{StaticResource Text_Style}" />
                         </Grid>
 
 
-                        <!--// Weapons //-->
+                        <!--// Talents //-->
 
                         <Grid>
                             <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
@@ -114,7 +128,7 @@ Style="{StaticResource Text_Style}" />
                                     <Image Source="imatges/img_weapons.png"
            Style="{StaticResource Image_Style}"/>
 
-                                    <TextBlock Text="Weapons"
+                                    <TextBlock Text="Talents"
                Style="{StaticResource Text_Style}"/>
                                 </Grid>
 
@@ -132,18 +146,6 @@ Style="{StaticResource Text_Style}" />
 
 
 
-            </Grid>
-
-            <Grid Grid.Column="1" Background="#0f0f0f">
-                <!--<Image 
-    Source="/imatges/login_background/pandaria_bg.jpg" 
-    Stretch="Fill"
-    RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <ScaleTransform ScaleX="-1"/>
-                    </Image.RenderTransform>
-                </Image>-->
-                <ContentControl x:Name="Page" Content="{Binding CurrentView}"/>
             </Grid>
 
         </Grid>

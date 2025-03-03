@@ -114,6 +114,48 @@ namespace MVVMarcane2.viewmodel
 			}
 		}
 
+		public ItemsVM(int id, ItemsFiltre itemsFiltre)
+		{
+			items = new Items();
+			itemsList = new List<Items>();
+
+			db = new DataBaseConnectionMySQL();
+
+			db.useSql(itemsFiltre.sqlFiltre);
+			db.fill();
+
+			//for (int i = 0; i < db.getDataCount(); i++)
+			//{
+			//	ItemId = (int)db.getPrimerResultat("ItemId");
+			//	Name = (string)db.getPrimerResultat("Name");
+			//	ILevel = (int)db.getPrimerResultat("ILevel");
+			//	Requeriment = (int)db.getPrimerResultat("Requeriment");
+			//	itemsList.Add(items);
+			//}
+
+			foreach (DataRow row in db.getData().Rows)
+			{
+				Items item = new Items
+				{
+					ItemId = (int)row["ItemId"],
+					Rarity = (int)row["Rarity"],
+					Name = (string)row["Name"],
+					ILevel = (int)row["ILevel"],
+					Requeriment = (int)row["Requeriment"],
+				};
+				itemsList.Add(item);
+			}
+
+			ItemId = id;
+		}
+
+		public ItemsVM(model.Items item)
+		{
+			items = new Items();
+			this.ItemId = item.ItemId;
+			this.Name = item.Name;
+		}
+
 		public List<Items> getItemsList()
 		{
 			return itemsList;
@@ -122,6 +164,11 @@ namespace MVVMarcane2.viewmodel
 		private string sqlGetAll()
 		{
 			return "SELECT * FROM Items";
+		}
+
+		public int getId()
+		{
+			return ItemId;
 		}
 
 	}
