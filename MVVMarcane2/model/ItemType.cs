@@ -10,21 +10,21 @@ namespace MVVMarcane2.model
 	{
 		public static string HEAD = "Head";
 
-		public static string ONE_HANDED_SWORD = "One-Handed Sword";
-		public static string ONE_HANDED_AXE = "One-Handed Axe";
-		public static string ONE_HANDED_MACE = "One-Handed Mace";
-		public static string TWO_HANDED_SWORD = "Two-Handed Sword";
-		public static string TWO_HANDED_AXE = "Two-Handed Axe";
-		public static string TWO_HANDED_MACE = "Two-Handed Mace";
-		public static string STAVE = "Stave";
-		public static string DAGGER = "Dagger";
-		public static string FIST_WEAPON = "Fist Weapon";
-		public static string POLEARM = "Polearm";
-		public static string BOW = "Bow";
-		public static string CROSSBOW = "Crossbow";
-		public static string GUN = "Gun";
-		public static string WAND = "Wand";
-		public static string THROWN = "Thrown";
-		public static string MISCELLANEOUS = "Miscellaneous";
+		public const string ONE_HANDED_SWORD = "One-Handed Sword";
+		public const string ONE_HANDED_AXE = "One-Handed Axe";
+		public const string ONE_HANDED_MACE = "One-Handed Mace";
+		public const string TWO_HANDED_SWORD = "Two-Handed Sword";
+		public const string TWO_HANDED_AXE = "Two-Handed Axe";
+		public const string TWO_HANDED_MACE = "Two-Handed Mace";
+		public const string STAVE = "Stave";
+		public const string DAGGER = "Dagger";
+		public const string FIST_WEAPON = "Fist Weapon";
+		public const string POLEARM = "Polearm";
+		public const string BOW = "Bow";
+		public const string CROSSBOW = "Crossbow";
+		public const string GUN = "Gun";
+		public const string WAND = "Wand";
+		public const string THROWN = "Thrown";
+		public const string MISCELLANEOUS = "Miscellaneous";
 	}
 }

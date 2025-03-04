@@ -132,6 +132,7 @@
     <Compile Include="model\DataBaseConnectionMySQL.cs" />
     <Compile Include="model\Items.cs" />
     <Compile Include="model\ItemsFiltre.cs" />
+    <Compile Include="model\ItemsWeapons.cs" />
     <Compile Include="model\ItemType.cs" />
     <Compile Include="model\Usuari.cs" />
     <Compile Include="model\Weapons.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="viewmodel\converters\RarityToColorConverter.cs" />
     <Compile Include="viewmodel\HomeVM.cs" />
     <Compile Include="viewmodel\ItemsVM.cs" />
+    <Compile Include="viewmodel\ItemsWeaponsVM.cs" />
     <Compile Include="viewmodel\NavigationVM.cs" />
     <Compile Include="viewmodel\UsuariVM.cs" />
     <Compile Include="viewmodel\WeaponsVM.cs" />

@@ -18,6 +18,7 @@ namespace MVVMarcane2.model
 		private string name;
 		private int rarity;
 		private int iLevel;
+		private string type;
 		private int requeriment;
 		private bool isFromQuest;
 		private int dropChance;
@@ -51,6 +52,7 @@ namespace MVVMarcane2.model
 		public string Name { get { return name; } set { name = value; } }
 		public int Rarity { get { return rarity; } set { rarity = value; } }
 		public int ILevel { get { return iLevel; } set { iLevel = value; } }
+		public string Type { get { return type; } set { type = value; } }
 		public int Requeriment { get { return requeriment; } set { requeriment = value; } }
 		public bool IsFromQuest { get { return isFromQuest; } set { isFromQuest = value; } }
 		public int DropChance { get { return dropChance; } set { dropChance = value; } }

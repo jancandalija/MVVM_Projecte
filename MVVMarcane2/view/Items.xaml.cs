@@ -36,7 +36,7 @@ namespace MVVMarcane2.view
 		{
 			// Click al botó FILTRAR
 
-			
+
 
 			ItemsFiltre itemsFiltre = new ItemsFiltre(
 				(bool)checkHead.IsChecked,
@@ -90,10 +90,49 @@ namespace MVVMarcane2.view
 			itemSeleccionat = new ItemsVM(TaulerItems.SelectedItem as model.Items);
 			if (itemSeleccionat != null)
 			{
-				TextBlockItemId.Text = itemSeleccionat.ItemId.ToString();
-				TextBlockItemNom.Text = itemSeleccionat.Name;
+				TaulerItemsInfo.Visibility = Visibility.Visible;
+				TaulerItemsInfoA.Visibility = Visibility.Visible;
+				TaulerItemsInfoB.Visibility = Visibility.Visible;
+				TaulerItemsInfoC.Visibility = Visibility.Visible;
+
+				lbItemNom.Visibility = Visibility.Visible;
+				lbItemNom.Content = itemSeleccionat.Name.ToString();
+
+				switch (itemSeleccionat.Type)
+				{
+					case ItemType.ONE_HANDED_SWORD:
+					case ItemType.ONE_HANDED_AXE:
+					case ItemType.ONE_HANDED_MACE:
+					case ItemType.TWO_HANDED_SWORD:
+					case ItemType.TWO_HANDED_AXE:
+					case ItemType.TWO_HANDED_MACE:
+					case ItemType.STAVE:
+					case ItemType.POLEARM:
+					case ItemType.GUN	:
+					case ItemType.BOW:
+					case ItemType.CROSSBOW:
+					case ItemType.DAGGER:
+					case ItemType.FIST_WEAPON:
+					case ItemType.THROWN:
+					case ItemType.WAND:
+
+						lbItemDamage.Visibility = Visibility.Visible;
+						lbItemDamage.Content = itemSeleccionat.getWeaponDamage(itemSeleccionat.ItemId);
+
+						break;
+					default:
+						break;
+				}
+
 			}
-			
+			else
+			{
+				TaulerItemsInfo.Visibility = Visibility.Collapsed;
+				TaulerItemsInfoA.Visibility = Visibility.Collapsed;
+				TaulerItemsInfoB.Visibility = Visibility.Collapsed;
+				TaulerItemsInfoC.Visibility = Visibility.Collapsed;
+			}
+
 		}
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)

@@ -23,6 +23,7 @@ namespace MVVMarcane2.viewmodel
 		public string Name { get { return items.Name; } set { items.Name = value; OnProperyChanged(); } }
 		public int Rarity { get { return items.Rarity; } set { items.Rarity = value; OnProperyChanged(); } }
 		public int ILevel { get { return items.ILevel; } set { items.ILevel = value; OnProperyChanged(); } }
+		public string Type { get { return items.Type; } set { items.Type = value; OnProperyChanged(); } }
 		public int Requeriment { get { return items.Requeriment; } set { items.Requeriment = value; OnProperyChanged(); } }
 		public bool IsFromQuest { get { return items.IsFromQuest; } set { items.IsFromQuest = value; OnProperyChanged(); } }
 		public int DropChance { get { return items.DropChance; } set { items.DropChance = value; OnProperyChanged(); } }
@@ -57,15 +58,6 @@ namespace MVVMarcane2.viewmodel
 			db.useSql(sqlGetAll());
 			db.fill();
 
-			//for (int i = 0; i < db.getDataCount(); i++)
-			//{
-			//	ItemId = (int)db.getPrimerResultat("ItemId");
-			//	Name = (string)db.getPrimerResultat("Name");
-			//	ILevel = (int)db.getPrimerResultat("ILevel");
-			//	Requeriment = (int)db.getPrimerResultat("Requeriment");
-			//	itemsList.Add(items);
-			//}
-
 			foreach (DataRow row in db.getData().Rows)
 			{
 				Items item = new Items
@@ -75,6 +67,7 @@ namespace MVVMarcane2.viewmodel
 					Name = (string)row["Name"],
 					ILevel = (int)row["ILevel"],
 					Requeriment = (int)row["Requeriment"],
+					Type = (string)row["Type"],
 				};
 				itemsList.Add(item);
 			}
@@ -91,15 +84,6 @@ namespace MVVMarcane2.viewmodel
 			db.useSql(itemsFiltre.sqlFiltre);
 			db.fill();
 
-			//for (int i = 0; i < db.getDataCount(); i++)
-			//{
-			//	ItemId = (int)db.getPrimerResultat("ItemId");
-			//	Name = (string)db.getPrimerResultat("Name");
-			//	ILevel = (int)db.getPrimerResultat("ILevel");
-			//	Requeriment = (int)db.getPrimerResultat("Requeriment");
-			//	itemsList.Add(items);
-			//}
-
 			foreach (DataRow row in db.getData().Rows)
 			{
 				Items item = new Items
@@ -109,51 +93,19 @@ namespace MVVMarcane2.viewmodel
 					Name = (string)row["Name"],
 					ILevel = (int)row["ILevel"],
 					Requeriment = (int)row["Requeriment"],
+					Type = (string)row["Type"],
 				};
 				itemsList.Add(item);
 			}
 		}
 
-		public ItemsVM(int id, ItemsFiltre itemsFiltre)
-		{
-			items = new Items();
-			itemsList = new List<Items>();
-
-			db = new DataBaseConnectionMySQL();
-
-			db.useSql(itemsFiltre.sqlFiltre);
-			db.fill();
-
-			//for (int i = 0; i < db.getDataCount(); i++)
-			//{
-			//	ItemId = (int)db.getPrimerResultat("ItemId");
-			//	Name = (string)db.getPrimerResultat("Name");
-			//	ILevel = (int)db.getPrimerResultat("ILevel");
-			//	Requeriment = (int)db.getPrimerResultat("Requeriment");
-			//	itemsList.Add(items);
-			//}
-
-			foreach (DataRow row in db.getData().Rows)
-			{
-				Items item = new Items
-				{
-					ItemId = (int)row["ItemId"],
-					Rarity = (int)row["Rarity"],
-					Name = (string)row["Name"],
-					ILevel = (int)row["ILevel"],
-					Requeriment = (int)row["Requeriment"],
-				};
-				itemsList.Add(item);
-			}
-
-			ItemId = id;
-		}
 
 		public ItemsVM(model.Items item)
 		{
 			items = new Items();
 			this.ItemId = item.ItemId;
 			this.Name = item.Name;
+			this.Type = item.Type;
 		}
 
 		public List<Items> getItemsList()
@@ -169,6 +121,17 @@ namespace MVVMarcane2.viewmodel
 		public int getId()
 		{
 			return ItemId;
+		}
+
+		public string getWeaponDamage(int itemId)
+		{
+			string resultat = "";
+
+			ItemsWeaponsVM weapon = new ItemsWeaponsVM(itemId);
+
+			resultat += weapon.DamageLowest + " - " + weapon.DamageHighest;
+
+			return resultat;
 		}
 
 	}

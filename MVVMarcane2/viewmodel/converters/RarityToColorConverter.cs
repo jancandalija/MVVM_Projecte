@@ -17,7 +17,7 @@ namespace MVVMarcane2.viewmodel.converters
 			switch (rarity)
 			{
 				case 0:
-					return "#9e9e9e"; // Común
+					return "#9e9e9e"; // Gris
 				case 1:
 					return Brushes.White; // Común
 				case 2:
