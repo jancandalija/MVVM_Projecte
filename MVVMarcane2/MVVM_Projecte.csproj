@@ -222,6 +222,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="imatges\llistat\azeroth_map_colorejat.jpg" />
+    <Resource Include="imatges\llistat\panell_bg_filtres.png" />
+    <Resource Include="imatges\llistat\btn_filtrar_down.png" />
+    <Resource Include="imatges\llistat\btn_filtrar_up.png" />
+    <Resource Include="imatges\llistat\fila6.png" />
+    <Resource Include="imatges\llistat\fila5.png" />
+    <Resource Include="imatges\llistat\fila4.png" />
     <Resource Include="imatges\llistat\bg_filtres.png" />
     <Resource Include="imatges\llistat\notick_wow.png" />
     <Resource Include="imatges\llistat\tick_wow.png" />

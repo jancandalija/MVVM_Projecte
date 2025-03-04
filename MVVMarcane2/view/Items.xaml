@@ -87,21 +87,21 @@ Visibility="Hidden"/>
             </Image>
         </Canvas>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="50,20,50,0">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="50,00,50,0">
 
             <StackPanel Orientation="Vertical">
 
-                <Grid Height="190" Width="800">
+                <Grid Height="Auto" Width="800">
 
-                    <Image Source="/imatges/llistat/bg_filtres.png" Visibility="Visible"
+                    <Image Source="/imatges/llistat/panell_bg_filtres.png" Visibility="Visible"
 
-                            RenderTransformOrigin="0.5,0.5" Margin="-30,-29,-30,-34"/>
+                            RenderTransformOrigin="0.5,0.5" Margin="0"/>
 
                     <!---#181818
                     Source="/imatges/text/textframe3.png"-->
 
 
-                    <StackPanel Orientation="Horizontal" Background="Transparent" Height="60" Margin="-8,89,8,41">
+                    <StackPanel Orientation="Horizontal" Background="Transparent" Height="60" Margin="0">
 
                         <TextBox Width="200"
                              HorizontalContentAlignment="Left"
@@ -176,16 +176,7 @@ Visibility="Hidden"/>
                                            Stretch="Fill"
                                            RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
                                     </Image>
-                                    <TextBlock Text="FILTRAR" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
-                                </Grid>
-                            </Button>
-                        </Grid>
-
-                        <!-- NETEJAR -->
-                        <Grid>
-                            <Button Style="{StaticResource BtnStyleFiltresFiltrar}">
-                                <Grid>
-                                    <TextBlock Text="🗙︎" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
+                                    <TextBlock Text="" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
                                 </Grid>
                             </Button>
                         </Grid>
@@ -568,7 +559,7 @@ Visibility="Hidden"/>
 
                                 <Grid Margin="0,0,0,0" Height="40">
                                     <Grid.Background>
-                                        <ImageBrush ImageSource="/imatges/llistat/fila3.png"></ImageBrush>
+                                        <ImageBrush ImageSource="/imatges/llistat/fila6.png"></ImageBrush>
                                     </Grid.Background>
 
                                     <Grid.ColumnDefinitions>
