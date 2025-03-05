@@ -106,6 +106,7 @@ namespace MVVMarcane2.viewmodel
 			this.ItemId = item.ItemId;
 			this.Name = item.Name;
 			this.Type = item.Type;
+			this.Rarity = item.Rarity;
 		}
 
 		public List<Items> getItemsList()

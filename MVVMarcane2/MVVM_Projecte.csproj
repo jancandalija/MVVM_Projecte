@@ -222,6 +222,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="imatges\llistat\pandaria_frame_1.jpg" />
     <Resource Include="imatges\llistat\azeroth_map_colorejat.jpg" />
     <Resource Include="imatges\llistat\panell_bg_filtres.png" />
     <Resource Include="imatges\llistat\btn_filtrar_down.png" />

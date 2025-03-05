@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MVVMarcane2.model;
 using MVVMarcane2.viewmodel;
+using MVVMarcane2.viewmodel.converters;
 
 namespace MVVMarcane2.view
 {
@@ -97,6 +98,7 @@ namespace MVVMarcane2.view
 
 				lbItemNom.Visibility = Visibility.Visible;
 				lbItemNom.Content = itemSeleccionat.Name.ToString();
+				lbItemNom.Foreground = obtenirColorFromRarity(itemSeleccionat.Rarity);
 
 				switch (itemSeleccionat.Type)
 				{
@@ -133,6 +135,20 @@ namespace MVVMarcane2.view
 				TaulerItemsInfoC.Visibility = Visibility.Collapsed;
 			}
 
+		}
+
+		private Brush obtenirColorFromRarity(int rarity)
+		{
+			object color = RarityToColorConverter.ConvertNormal(rarity);
+
+			if (color is string)
+			{
+				return (Brush)new BrushConverter().ConvertFromString((string)color);
+			}
+			else
+			{
+				return (Brush)color;
+			}
 		}
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)
