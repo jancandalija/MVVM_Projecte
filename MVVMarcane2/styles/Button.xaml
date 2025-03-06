@@ -15,8 +15,11 @@
                     <ControlTemplate.Triggers>
                         <!-- Hover Effect -->
                         <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#003428"/>
+                            <!--Gris 1: 2f2f2f, Verd 1: 163916, Verd 2: 00755a, Verd 3: 005843, Verd 4: 003428-->
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#00755a"/>
-                            <!--Gris 1: 2f2f2f, Verd 1: 163916, Verd2: 00755a-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
