@@ -7,14 +7,14 @@
         xmlns:vm="clr-namespace:MVVMarcane2.viewmodel"
         xmlns:Menu="clr-namespace:MVVMarcane2.utilities"
         mc:Ignorable="d"
-        Title="Arcane" Height="720" 
+        Title="Arcane" 
+        Height="800" 
         Width="1280"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
-        BorderBrush="#a87c1d"
-        BorderThickness="1">
+        >
 
     <Window.DataContext>
         <vm:NavigationVM>
@@ -22,18 +22,35 @@
         </vm:NavigationVM>
     </Window.DataContext>
     
+    
     <Grid>
-        <Border Background="#0f0f0f" />
-        <!-- #0f0f0f, #212529 -->
-        <Grid Width="1280">
-            <!--// Base Grid //-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="1080" />
-            </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="1" Background="#0f0f0f">
-                <!--<Image 
+        
+        <!-- #0f0f0f, #212529 -->
+
+        <Border Background="#212121" CornerRadius="9" Margin="1">
+            <Grid>
+                <StackPanel Width="1279" Height="800">
+
+                    <Border CornerRadius="9,10,0,0" BorderThickness="0,0,0,0.7" BorderBrush="#00755a"  MouseDown="Grid_MouseDown" IsHitTestVisible="True">
+                        <StackPanel Width="1280" Height="50" Orientation="Horizontal">
+                            
+                        </StackPanel>
+                    </Border>
+                    
+
+                    <Grid Width="1280" Height="749" Margin="0">
+
+
+                        <!--// Base Grid //-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="1079" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Border Background="#0f0f0f" CornerRadius="0,0,12,0"/>
+                            <!--<Image 
 Source="/imatges/login_background/pandaria_bg.jpg" 
 Stretch="Fill"
 RenderTransformOrigin="0.5,0.5">
@@ -41,21 +58,20 @@ RenderTransformOrigin="0.5,0.5">
                     <ScaleTransform ScaleX="-1"/>
                 </Image.RenderTransform>
             </Image>-->
-                <ContentControl x:Name="Page" Content="{Binding CurrentView}"/>
-            </Grid>
+                            <ContentControl x:Name="Page" Content="{Binding CurrentView}"/>
+                        </Grid>
 
-            <!--// Navigation Panel //-->
-            <Grid HorizontalAlignment="Left"
-                  Width="200">
-                <Border Background="#212121"/>
-                <!-- #0f0f0f, #272B2F -->
+                        <!--// Navigation Panel //-->
+                        <Grid HorizontalAlignment="Left" Width="200" Margin="0,0,0,0" Grid.Column="0">
+                            <Border Background="#212121" CornerRadius="0,0,0,10" BorderThickness="0,0,0.7,0" BorderBrush="#00755a"/>
+                            <!-- #0f0f0f, #272B2F -->
 
 
-                <Image Source="/imatges/marcs/LoadScreen_Pandaria.jpg" 
+                            <!--<Image Source="/imatges/marcs/LoadScreen_Pandaria.jpg" 
                        VerticalAlignment="Top"
-                       Width="200"/>
+                       Width="200"/>-->
 
-                <Image Source="/imatges/marcs/marc_wow.png"
+                            <Image Source="/imatges/marcs/marc_wow.png"
                        VerticalAlignment="Top"
                        Margin="0,145,0,0"
                        Width="238"
@@ -63,91 +79,97 @@ RenderTransformOrigin="0.5,0.5">
                        IsHitTestVisible="False"/>
 
 
-                <Image Source="/imatges/marcs/marc_wow.png"
+                            <Image Source="/imatges/marcs/marc_wow.png"
                        IsHitTestVisible="False"
                        VerticalAlignment="Bottom"
                        HorizontalAlignment="Center"
                        Width="238"
                        Margin="0,0,0,-30">
-                    <Image.RenderTransform>
-                        <ScaleTransform ScaleY="-1"/>
-                    </Image.RenderTransform>
-                </Image>
+                                <Image.RenderTransform>
+                                    <ScaleTransform ScaleY="-1"/>
+                                </Image.RenderTransform>
+                            </Image>
 
 
 
-                <ScrollViewer Margin="0,160,0,14" VerticalScrollBarVisibility="Hidden" BorderThickness="0,0,10,0" BorderBrush="#d7c07c">
+                            <ScrollViewer Margin="0,160,0,14" VerticalScrollBarVisibility="Hidden" BorderThickness="0,0,10,0" BorderBrush="#d7c07c">
 
-                    <StackPanel Width="200">
+                                <StackPanel Width="200">
 
-                        <!--// Home //-->
-                        <Grid>
-                            <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
+                                    <!--// Home //-->
+                                    <Grid>
+                                        <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
   Command="{Binding HomeCommand}"
   IsChecked="True">
 
-                                <Grid>
-                                    <Image Source="imatges/img_arcane.png"
+                                            <Grid>
+                                                <Image Source="imatges/img_arcane.png"
 Style="{StaticResource Image_Style}" />
 
-                                    <TextBlock Text="Inici"
+                                                <TextBlock Text="Inici"
 Style="{StaticResource Text_Style}" />
-                                </Grid>
+                                            </Grid>
 
-                            </Menu:Btn>
+                                        </Menu:Btn>
 
-                        </Grid>
+                                    </Grid>
 
-                        <!--// Players //-->
+                                    <!--// Players //-->
 
-                        <Grid>
-                            <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
+                                    <Grid>
+                                        <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
       Command="{Binding ItemsCommand}"
       IsChecked="False">
 
-                                <Grid>
-                                    <Image Source="imatges/img_players.png"
+                                            <Grid>
+                                                <Image Source="imatges/img_players.png"
            Style="{StaticResource Image_Style}"/>
 
-                                    <TextBlock Text="Items"
+                                                <TextBlock Text="Items"
                Style="{StaticResource Text_Style}"/>
-                                </Grid>
+                                            </Grid>
 
-                            </Menu:Btn>
-                        </Grid>
+                                        </Menu:Btn>
+                                    </Grid>
 
 
-                        <!--// Talents //-->
+                                    <!--// Talents //-->
 
-                        <Grid>
-                            <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
+                                    <Grid>
+                                        <Menu:Btn GroupName="GrpMenu" Style="{StaticResource BtnStyle}"
       Command="{Binding WeaponsCommand}"
       IsChecked="False">
 
-                                <Grid>
-                                    <Image Source="imatges/img_weapons.png"
+                                            <Grid>
+                                                <Image Source="imatges/img_weapons.png"
            Style="{StaticResource Image_Style}"/>
 
-                                    <TextBlock Text="Talents"
+                                                <TextBlock Text="Talents"
                Style="{StaticResource Text_Style}"/>
-                                </Grid>
+                                            </Grid>
 
-                            </Menu:Btn>
+                                        </Menu:Btn>
+                                    </Grid>
+
+
+                                </StackPanel>
+
+
+
+
+
+                            </ScrollViewer>
+
+
+
                         </Grid>
 
-
-                    </StackPanel>
-
-
-
-
-
-                </ScrollViewer>
-
-
-
+                    </Grid>
+                </StackPanel>
             </Grid>
+        </Border>
 
-        </Grid>
+
+        <Border Background="Transparent" CornerRadius="10" BorderBrush="#00755a" BorderThickness="1"/>
     </Grid>
 </Window>

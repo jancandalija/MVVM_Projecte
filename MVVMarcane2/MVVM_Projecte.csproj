@@ -117,6 +117,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FinestraDos.xaml.cs">
+      <DependentUpon>FinestraDos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,7 @@
     <Compile Include="utilities\Btn.cs" />
     <Compile Include="utilities\RelayCommand.cs" />
     <Compile Include="utilities\ViewModelBase.cs" />
+    <Compile Include="viewmodel\converters\BorderClipConverter.cs" />
     <Compile Include="viewmodel\converters\RarityToColorConverter.cs" />
     <Compile Include="viewmodel\HomeVM.cs" />
     <Compile Include="viewmodel\ItemsVM.cs" />
@@ -155,6 +159,10 @@
     <Compile Include="view\Weapons.xaml.cs">
       <DependentUpon>Weapons.xaml</DependentUpon>
     </Compile>
+    <Page Include="FinestraDos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -222,6 +230,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="imatges\icons\left_bar\section_items.png" />
     <Resource Include="imatges\llistat\pandaria_frame_1.jpg" />
     <Resource Include="imatges\llistat\azeroth_map_colorejat.jpg" />
     <Resource Include="imatges\llistat\panell_bg_filtres.png" />

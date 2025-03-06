@@ -8,7 +8,7 @@
              xmlns:model="clr-namespace:MVVMarcane2.model"
              xmlns:converters="clr-namespace:MVVMarcane2.viewmodel.converters"
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="1000"
+             d:DesignHeight="750" d:DesignWidth="1000"
              
              >
 
@@ -80,7 +80,7 @@ Visibility="Hidden"/>
     <Grid>
 
         <Canvas>
-            <Image Source="/imatges/backgrounds_bamboo/bg_pandaria_10.jpg" Width="1290">
+            <Image Source="/imatges/backgrounds_bamboo/bg_pandaria_10.jpg" Width="1330" Visibility="Hidden">
                 <Image.Effect>
                     <BlurEffect Radius="20"/>
                 </Image.Effect>
