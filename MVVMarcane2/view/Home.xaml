@@ -11,7 +11,7 @@
         <Border>
 
             <Image 
-                Source="/imatges/login_background/pandaria_bg.jpg" 
+                Source="/imatges/control_background/quan_zhi_gao_show_bg.jpg" 
                 Stretch="Fill"
                 RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
