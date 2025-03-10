@@ -24,55 +24,7 @@
 
 
 
-        <Style TargetType="{x:Type ListBoxItem}">
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <!--"#212121"-->
-            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-            <Setter Property="Padding" Value="2,0,0,0"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
-
-
-                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
-                            <Grid>
-
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                <Image x:Name="Indicator"
-    Source="/imatges/llistat/tick_wow.png"
-    Height="20"
-    Width="20"
-    Margin="0,0,40,0"
-    HorizontalAlignment="Right"
-    VerticalAlignment="Center"
-    Visibility="Hidden"/>
-                                <Image x:Name="IndicatorOFF"
-Source="/imatges/llistat/notick_wow.png"
-Height="20"
-Width="20"
-Margin="0,0,40,0"
-HorizontalAlignment="Right"
-VerticalAlignment="Center"
-Visibility="Hidden"/>
-                            </Grid>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsSelected" Value="true">
-                                <!-- <Setter Property="Background" Value="#313131"/> -->
-                                <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
-                            </Trigger>
-                            <Trigger Property="IsSelected" Value="false">
-                                <!-- <Setter Property="Background" Value="#313131"/> -->
-                                <Setter TargetName="IndicatorOFF" Property="Visibility" Value="Visible" />
-                            </Trigger>
-
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        
 
     </UserControl.Resources>
 
@@ -80,7 +32,7 @@ Visibility="Hidden"/>
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="202"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
@@ -100,30 +52,46 @@ Visibility="Hidden"/>
 
             <StackPanel>
 
-                <ListBox Name="TaulerFiltresFav" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" Padding="0">
+                <Border Height="40" Background="#1c1c1c" CornerRadius="0,0,5,5" BorderThickness="0" Padding="5" Margin="0,0,0,5">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="Transparent" Width="159.6" Height="25" BorderThickness="0,0,0,1" BorderBrush="Wheat">
+                            <TextBox BorderThickness="0" Background="Transparent" Width="150" Foreground="Wheat" VerticalContentAlignment="Center" FontSize="15"/>
+                        </Border>
+                        <Border CornerRadius="5" Background="#711313" Width="25" Height="25" Margin="5,0,0,0">
+                            <Button Background="Transparent" Width="25" Height="25" BorderThickness="0" VerticalContentAlignment="Center" Cursor="Hand">
+                                <Image Source="/imatges/icons/submit.png" Width="18" Height="18" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Visibility="Visible"/>
+                            </Button>
+                        </Border>
+                    </StackPanel>
+                </Border>
+                
+                
+                <ListBox Name="TaulerFiltresFav" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Multiple" Padding="0" ItemContainerStyle="{StaticResource ListBoxItemStyleFiltresFav}">
 
                     <ListBox.ItemTemplate>
 
                         <DataTemplate>
 
-                            <Grid Height="40" Background="#0f0f0f" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <Grid Height="40" Width="200" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
                                 <Grid.ColumnDefinitions>
 
                                     <!--Width total és 200-->
-                                    <ColumnDefinition Width="45"/>
-                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="160"/>
 
                                 </Grid.ColumnDefinitions>
 
 
                                 <Grid Grid.Column="0" VerticalAlignment="Center">
 
-                                    <TextBlock Text="{Binding Path=IdFiltre}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center"/>
+                                    <Border Width="20" Height="20" Background="#711313" CornerRadius="5" HorizontalAlignment="Left" Margin="5,0,0,0">
+                                        <TextBlock Text="{Binding Path=IdFiltre}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
                                 </Grid>
                                 <Grid Grid.Column="1">
 
-                                    <TextBlock Text="{Binding Path=Nom}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Path=Nom}" FontSize="15" VerticalAlignment="Center"/>
                                 </Grid>
 
                             </Grid>
@@ -603,7 +571,7 @@ Visibility="Hidden"/>
 
                     
 
-                    <ListBox Name="TaulerItems" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" Width="920" Padding="0" SelectionChanged="TaulerItems_SelectionChanged">
+                    <ListBox Name="TaulerItems" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" Width="920" Padding="0" SelectionChanged="TaulerItems_SelectionChanged" ItemContainerStyle="{StaticResource ListBoxItemStyleItemsList}">
 
                         <ListBox.ItemTemplate>
 

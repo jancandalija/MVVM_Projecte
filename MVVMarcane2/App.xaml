@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="styles/Text.xaml" />
                 <ResourceDictionary Source="styles/Button.xaml" />
                 <ResourceDictionary Source="styles/TextBoxLogin.xaml" />
+                <ResourceDictionary Source="styles/ListBoxItem.xaml" />
                 <ResourceDictionary Source="utilities/DataTemplate.xaml" />
 
 

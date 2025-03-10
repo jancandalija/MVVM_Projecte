@@ -237,6 +237,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="imatges\icons\submit.png" />
     <Resource Include="imatges\control_background\quan_zhi_gao_show_bg.jpg" />
     <Resource Include="imatges\icons\left_bar\section_items.png" />
     <Resource Include="imatges\llistat\pandaria_frame_1.jpg" />

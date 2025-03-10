@@ -20,6 +20,7 @@
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#711313"/>
+                            <Setter Property="Foreground" Value="Wheat" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

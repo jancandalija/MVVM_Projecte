@@ -56,9 +56,18 @@ namespace MVVMarcane2.model
 
 		public DataBaseConnectionMySQL fill()
 		{
-			dataTable = new DataTable();
-			mySqlDataAdapter.Fill(dataTable);
-			mySqlConnection.Close();
+			try {
+				dataTable = new DataTable();
+				mySqlDataAdapter.Fill(dataTable);
+				//mySqlConnection.Close();
+			} 
+			catch (Exception e)
+			{
+				dataTable = new DataTable();
+				mySqlDataAdapter.Fill(dataTable);
+				//mySqlConnection.Close();
+			}
+			
 			return this;
 		}
 
