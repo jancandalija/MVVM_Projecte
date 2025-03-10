@@ -77,8 +77,13 @@ Visibility="Hidden"/>
     </UserControl.Resources>
 
 
+    
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
         <Canvas>
             <Image Source="/imatges/backgrounds_bamboo/bg_pandaria_10.jpg" Width="1330" Visibility="Hidden">
                 <Image.Effect>
@@ -87,7 +92,54 @@ Visibility="Hidden"/>
             </Image>
         </Canvas>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="50,00,50,0">
+
+<!-- COLUMNA 1 (FILTRES FAV) -->
+        
+        <!-- TODO: S'esta aplicant el style definit a la part superior, quest style és unic pels items de items no s'hauria d'utilitzar en aquest-->
+        <Border Grid.Column="0" Background="#0E0E0E" CornerRadius="0,0,0,8.6" BorderThickness="0,0,1,0" BorderBrush="#1A1A1A">
+
+            <StackPanel>
+
+                <ListBox Name="TaulerFiltresFav" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" Padding="0">
+
+                    <ListBox.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <Grid Height="40" Background="#0f0f0f" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                                <Grid.ColumnDefinitions>
+
+                                    <!--Width total és 200-->
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition Width="150"/>
+
+                                </Grid.ColumnDefinitions>
+
+
+                                <Grid Grid.Column="0" VerticalAlignment="Center">
+
+                                    <TextBlock Text="{Binding Path=IdFiltre}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+
+                                    <TextBlock Text="{Binding Path=Nom}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center"/>
+                                </Grid>
+
+                            </Grid>
+
+
+                        </DataTemplate>
+
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+
+            </StackPanel>
+        </Border>
+
+<!-- COLUMNA 2 (ITEMS i FILTRES) -->
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" Padding="50,00,50,0">
 
             <StackPanel Orientation="Vertical">
 

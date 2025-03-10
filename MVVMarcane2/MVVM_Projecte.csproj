@@ -133,10 +133,12 @@
     </Compile>
     <Compile Include="model\DataBaseConnection.cs" />
     <Compile Include="model\DataBaseConnectionMySQL.cs" />
+    <Compile Include="model\Filtres.cs" />
     <Compile Include="model\Items.cs" />
     <Compile Include="model\ItemsFiltre.cs" />
     <Compile Include="model\ItemsWeapons.cs" />
     <Compile Include="model\ItemType.cs" />
+    <Compile Include="model\UserConfig.cs" />
     <Compile Include="model\Usuari.cs" />
     <Compile Include="model\Weapons.cs" />
     <Compile Include="utilities\Btn.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="utilities\ViewModelBase.cs" />
     <Compile Include="viewmodel\converters\BorderClipConverter.cs" />
     <Compile Include="viewmodel\converters\RarityToColorConverter.cs" />
+    <Compile Include="viewmodel\FiltresVM.cs" />
     <Compile Include="viewmodel\HomeVM.cs" />
     <Compile Include="viewmodel\ItemsVM.cs" />
     <Compile Include="viewmodel\ItemsWeaponsVM.cs" />
@@ -179,6 +182,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="styles\ListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="styles\TextBoxLogin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

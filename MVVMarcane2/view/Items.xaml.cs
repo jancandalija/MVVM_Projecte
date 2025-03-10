@@ -31,6 +31,7 @@ namespace MVVMarcane2.view
 			InitializeComponent();
 
 			TaulerItems.ItemsSource = new ItemsVM().getItemsList();
+			TaulerFiltresFav.ItemsSource = new FiltresVM(FiltresVM.MODE_OBTENIR_TOT).getFiltresList();
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)

@@ -58,7 +58,14 @@ namespace MVVMarcane2.model
 		{
 			dataTable = new DataTable();
 			mySqlDataAdapter.Fill(dataTable);
+			mySqlConnection.Close();
 			return this;
+		}
+
+		public void exec()
+		{
+			mySqlCommand.ExecuteNonQuery();
+			mySqlConnection.Close();
 		}
 	}
 }

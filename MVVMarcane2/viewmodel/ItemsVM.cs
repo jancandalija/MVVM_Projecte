@@ -81,7 +81,7 @@ namespace MVVMarcane2.viewmodel
 
 			db = new DataBaseConnectionMySQL();
 
-			db.useSql(itemsFiltre.sqlFiltre);
+			db.useSql(itemsFiltre.sqlFiltre); // TODO: S'ha de fer el mateix a Filtres, però utilitzar un filtre temporal, per no perdre l'actual seleccionat o bé substituir i adaptar tots els checks pel del filtre fav
 			db.fill();
 
 			foreach (DataRow row in db.getData().Rows)
