@@ -97,6 +97,12 @@ namespace MVVMarcane2.viewmodel
 			}
 		}
 
+		public static void createFiltre(string nom, string sqlFiltre)
+		{
+			FiltresVM filtre = new FiltresVM(0);
+			filtre.insert(nom, sqlFiltre);
+		}
+
 		public void insert(string nom, string sqlFiltre)
 		{
 			db = new DataBaseConnectionMySQL();
@@ -124,9 +130,9 @@ namespace MVVMarcane2.viewmodel
 				NOM_FILTRE + ", " +
 				FILTRE_SQL +
 				") VALUES (" +
-				ID_USUARI + "=" + "@" + ID_USUARI + ", " +
-				NOM_FILTRE + "=" + "@" + NOM_FILTRE + ", " +
-				FILTRE_SQL + "=" + "@" + FILTRE_SQL + ", " +
+				"@" + ID_USUARI + ", " +
+				"@" + NOM_FILTRE + ", " +
+				"@" + FILTRE_SQL +
 				")";
 		}
 

@@ -73,6 +73,7 @@ namespace MVVMarcane2.model
 
 		public void exec()
 		{
+			mySqlConnection.Open();
 			mySqlCommand.ExecuteNonQuery();
 			mySqlConnection.Close();
 		}

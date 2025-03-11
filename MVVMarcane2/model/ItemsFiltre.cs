@@ -8,7 +8,7 @@ namespace MVVMarcane2.model
 {
 	public class ItemsFiltre
 	{
-		public string sqlFiltre = "";
+		public string sql = "";
 
 		bool checkHead = false;
 		bool checkNeck = false;
@@ -135,10 +135,10 @@ namespace MVVMarcane2.model
 			this.checkTabard = checkTabard;
 			this.checkOther = checkOther;
 
-			construirFiltre();
+			build();
 		}
 
-		private ItemsFiltre construirFiltre()
+		private ItemsFiltre build()
 		{
 			StringBuilder sql = new StringBuilder();
 			sql.Append("SELECT * FROM " + Items.TABLE_NAME);
@@ -192,13 +192,13 @@ namespace MVVMarcane2.model
 				sql.Append(string.Join(" OR ", conditions));
 			}
 
-			this.sqlFiltre = sql.ToString();
+			this.sql = sql.ToString();
 			return this;
 		}
 
 		public void clear()
 		{
-			this.sqlFiltre = "";
+			this.sql = "";
 		}
 	}
 }

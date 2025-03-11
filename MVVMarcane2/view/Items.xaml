@@ -54,12 +54,21 @@
 
                 <Border Height="40" Background="#1c1c1c" CornerRadius="0,0,5,5" BorderThickness="0" Padding="5" Margin="0,0,0,5">
                     <StackPanel Orientation="Horizontal">
-                        <Border Background="Transparent" Width="159.6" Height="25" BorderThickness="0,0,0,1" BorderBrush="Wheat">
-                            <TextBox BorderThickness="0" Background="Transparent" Width="150" Foreground="Wheat" VerticalContentAlignment="Center" FontSize="15"/>
+                        <Border Background="Transparent" Width="129.6" Height="25" BorderThickness="0,0,0,1" BorderBrush="Wheat">
+                            <TextBox x:Name="tbFiltrarFiltresFavorits" BorderThickness="0" Background="Transparent" Width="150" Foreground="Wheat" VerticalContentAlignment="Center" FontSize="15"/>
                         </Border>
                         <Border CornerRadius="5" Background="#711313" Width="25" Height="25" Margin="5,0,0,0">
                             <Button Background="Transparent" Width="25" Height="25" BorderThickness="0" VerticalContentAlignment="Center" Cursor="Hand">
                                 <Image Source="/imatges/icons/submit.png" Width="18" Height="18" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Visibility="Visible"/>
+                            </Button>
+                        </Border>
+                        <Border CornerRadius="5" Background="#00755a" Width="25" Height="25" Margin="5,0,0,0">
+                            <Button Background="Transparent" Width="25" Height="25" BorderThickness="0" VerticalContentAlignment="Center" Cursor="Hand" Click="Button_Click_2">
+                                <Image Source="/imatges/icons/submit.png" Width="18" Height="18" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Visibility="Visible">
+                                    <Image.RenderTransform>
+                                        <RotateTransform Angle="90" />
+                                    </Image.RenderTransform>
+                                </Image>
                             </Button>
                         </Border>
                     </StackPanel>
@@ -107,102 +116,126 @@
         </Border>
 
 <!-- COLUMNA 2 (ITEMS i FILTRES) -->
-        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" Padding="50,00,50,0">
+
+        <StackPanel Grid.Column="1">
 
             <StackPanel Orientation="Vertical">
 
-                <Grid Height="Auto" Width="800">
+                <Grid Height="Auto">
 
-                    <Image Source="/imatges/llistat/panell_bg_filtres.png" Visibility="Visible"
+                    <!--<Image Source="/imatges/llistat/panell_bg_filtres.png" Visibility="Visible"
 
-                            RenderTransformOrigin="0.5,0.5" Margin="0"/>
+                   RenderTransformOrigin="0.5,0.5" Margin="0"/>-->
 
                     <!---#181818
-                    Source="/imatges/text/textframe3.png"-->
+           Source="/imatges/text/textframe3.png"-->
 
 
-                    <StackPanel Orientation="Horizontal" Background="Transparent" Height="60" Margin="0">
+                    <Border Height="60" Background="#0E0E0E" BorderThickness="0,0,0,1" BorderBrush="#1A1A1A">
+                        <StackPanel Orientation="Horizontal" Height="60" Margin="0">
 
-                        <TextBox Width="200"
-                             HorizontalContentAlignment="Left"
-                             VerticalContentAlignment="Center"
-                             BorderThickness="0,0,0,1"
-                             Tag="PROVA"
-                             Foreground="#d7c07c"
-                             CaretBrush="#d7c07c"
-                             Height="40"
-                             Margin="30,0,0,0"
-                             Background="Transparent"
-                             FontSize="16"
-                             Padding="20,0,20,0"/>
+                            <TextBox Width="200"
+HorizontalContentAlignment="Left"
+VerticalContentAlignment="Center"
+BorderThickness="0,0,0,1"
+Tag="PROVA"
+Foreground="#d7c07c"
+CaretBrush="#d7c07c"
+Height="40"
+Margin="30,0,0,0"
+Background="Transparent"
+FontSize="16"
+Padding="20,0,20,0"/>
 
-                        <!---#202020-->
+                            <!---#202020-->
 
-                        <StackPanel Orientation="Horizontal">
-                            <!-- Tipus -->
-                            <Grid>
-                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False" x:Name="RBFiltresItems">
-                                    <Grid>
-                                        <TextBlock Text="Tipus" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                    </Grid>
-                                </RadioButton>
-                            </Grid>
-
-                            <!-- Raresa -->
-                            <Grid>
-                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
-                                    <Grid>
-                                        <TextBlock Text="Raresa" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                    </Grid>
-                                </RadioButton>
-                            </Grid>
-
-                            <!-- Nivell -->
-                            <Grid>
-                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
-                                    <Grid>
-                                        <TextBlock Text="Nivell" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                    </Grid>
-                                </RadioButton>
-                            </Grid>
-
-                            <!-- Drop -->
-                            <Grid>
-                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
-                                    <Grid>
-                                        <TextBlock Text="Drop" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                    </Grid>
-                                </RadioButton>
-                            </Grid>
-
-                            <!-- Instancia -->
-                            <Grid>
-                                <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False">
-                                    <Grid>
-
-                                        <TextBlock Text="Instància" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                    </Grid>
-                                </RadioButton>
-                            </Grid>
-                        </StackPanel>
-
-
-
-                        <!-- FILTRAR -->
-                        <Grid>
-                            <Button Style="{StaticResource BtnStyleFiltresFiltrar}" Click="Button_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <!-- Tipus -->
                                 <Grid>
-                                    <Image Source="/imatges/backgrounds_bamboo/drac_or_marc_boto.jpg"
-                                           Stretch="Fill"
-                                           RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
-                                    </Image>
-                                    <TextBlock Text="" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
+                                    <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False" x:Name="RBFiltresItems">
+                                        <Grid>
+                                            <TextBlock Text="Tipus" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
+                                        </Grid>
+                                    </RadioButton>
                                 </Grid>
-                            </Button>
-                        </Grid>
+
+                                <!-- Instancia -->
+                                <Grid Height="60" Width="60">
+
+                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Lloc" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
+
+                                <!-- Tipus -->
+                                <Grid Height="60" Width="60">
+
+                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Tipus" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
+
+                                <!-- Raresa -->
+                                <Grid Height="60" Width="60">
+
+                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Raresa" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
+
+                                <!-- Nivell -->
+                                <Grid Height="60" Width="60">
+
+                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Nivell" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
+
+                                <!-- Drop -->
+                                <Grid Height="60" Width="60">
+
+                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Drop" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
+                                        </Border.Background>
+                                    </Border>
+                                </Grid>
 
 
-                    </StackPanel>
+                            </StackPanel>
+
+
+
+                            <!-- FILTRAR -->
+                            <Grid>
+                                <Button Style="{StaticResource BtnStyleFiltresFiltrar}" Click="Button_Click">
+                                    <Grid>
+                                        <Image Source="/imatges/backgrounds_bamboo/drac_or_marc_boto.jpg"
+              Stretch="Fill"
+              RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+                                        </Image>
+                                        <TextBlock Text="" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
+                                    </Grid>
+                                </Button>
+                            </Grid>
+
+
+                        </StackPanel>
+                    </Border>
+
 
 
                 </Grid>
@@ -521,135 +554,136 @@
                 </StackPanel>
 
 
-                <StackPanel Name="TaulerItemsInfo" Orientation="Horizontal" Visibility="Visible" HorizontalAlignment="Center">
-                    <StackPanel Name="TaulerItemsInfoA" Width="300" Height="200" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
-                        <StackPanel.Background>
-                            <ImageBrush ImageSource="/imatges/llistat/fila3.png"></ImageBrush>
-                        </StackPanel.Background>
-                        
-                        <Separator Height="15"/>
-                        
-                        <Label Content="ITEM" Foreground="White" HorizontalContentAlignment="Center"/>
+                <Grid Name="TaulerItemsInfo" Height="200">
 
-                        <Label Name="lbItemNom" Content="" Visibility="Collapsed" Foreground="{Binding Path=Rarity, Converter={StaticResource RarityToColorConverter}}"/>
-                        <Label Name="lbItemDamage" Content="" Visibility="Collapsed" Foreground="White"/>
-                        <Label Name="lbItemArmor" Content="" Visibility="Collapsed" Foreground="White"/>
-                        <Label Name="lbItemDescription" Content="" Visibility="Collapsed" Foreground="White"/>
-                        <Label Name="lbItemExtra" Content="" Visibility="Collapsed" Foreground="LimeGreen"/>
-                        
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="1" Name="TaulerItemsInfoA" CornerRadius="5">
+                        <Grid>
+                            <StackPanel>
+                                <Label Content="ITEM" Foreground="White" HorizontalContentAlignment="Center" Height="30"/>
+                                <Separator/>
+                                <Label Name="lbItemNom" Content="---" Visibility="Collapsed" Foreground="{Binding Path=Rarity, Converter={StaticResource RarityToColorConverter}}"/>
+                                <Label Name="lbItemDamage" Content="---" Visibility="Collapsed" Foreground="White"/>
+                                <Label Name="lbItemArmor" Content="---" Visibility="Collapsed" Foreground="White"/>
+                                <Label Name="lbItemExtra" Content="---" Visibility="Collapsed" Foreground="LimeGreen"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="3" Name="TaulerItemsInfoB" CornerRadius="5">
+                        <Grid>
+                            <StackPanel>
+                                <Label Content="PLACE" Foreground="White" HorizontalContentAlignment="Center" Height="30"/>
+                                <Separator/>
+                                <TextBlock Name="TextBlockItemId1" Text="---"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Name="TextBlockItemNom2" Text="---"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Column="5" Name="TaulerItemsInfoC" CornerRadius="5">
+                        <Grid>
+                            <StackPanel>
+                                <Label Content="NPC" Foreground="White" HorizontalContentAlignment="Center" Height="30"/>
+                                <Separator/>
+                                <TextBlock Name="TextBlockItemId11" Text="---"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock Name="TextBlockItemNom22" Text="---"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                    <StackPanel Margin="0,10,0,0">
+
+                        <ListBox Padding="50,0,50,0" Name="TaulerItems" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" SelectionChanged="TaulerItems_SelectionChanged" ItemContainerStyle="{StaticResource ListBoxItemStyleItemsList}">
+
+                            <ListBox.ItemTemplate>
+
+                                <DataTemplate>
+
+                                    <Grid Margin="0,0,0,0" Height="40">
+
+                                        <Grid.Background>
+                                            <ImageBrush ImageSource="/imatges/llistat/fila6.png"></ImageBrush>
+                                        </Grid.Background>
+
+                                        <Grid.ColumnDefinitions>
+                                            <!--Width total és 900-->
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0" VerticalAlignment="Center">
+
+                                            <TextBlock Text="{Binding Path=ItemId}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+
+                                            <TextBlock Text="{Binding Path=Name}" Foreground="{Binding Path=Rarity, Converter={StaticResource RarityToColorConverter}}" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+
+                                            <TextBlock Text="ilvl" TextAlignment="Right" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
+                                        </Grid>
+                                        <Grid Grid.Column="3">
+
+                                            <TextBlock Text="{Binding Path=ILevel}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Column="4">
+
+                                            <TextBlock Text="lvl" TextAlignment="Right" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
+                                        </Grid>
+                                        <Grid Grid.Column="5">
+
+                                            <TextBlock Text="{Binding Path=Requeriment}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Column="6">
+
+                                            <TextBlock Text="%" TextAlignment="Right" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
+                                        </Grid>
+                                        <Grid Grid.Column="7">
+
+                                            <TextBlock Text="{Binding Path=DropChance}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
+                                        </Grid>
+
+                                    </Grid>
+
+                                </DataTemplate>
+
+                            </ListBox.ItemTemplate>
+
+                        </ListBox>
+
                     </StackPanel>
 
-                    <StackPanel Name="TaulerItemsInfoB" Width="300" Height="200" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
-                        <StackPanel.Background>
-                            <ImageBrush ImageSource="/imatges/llistat/fila3.png"></ImageBrush>
-                        </StackPanel.Background>
-
-                        <Separator Height="15"/>
-                        
-                        <Label Content="INSTANCIA" Foreground="White" HorizontalContentAlignment="Center"/>
-
-                        <TextBlock Name="TextBlockItemId1" Text="PROVA"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <TextBlock Name="TextBlockItemNom2" Text="PROVA2"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                    </StackPanel>
-
-                    <StackPanel Name="TaulerItemsInfoC" Width="300" Height="200" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
-                        <StackPanel.Background>
-                            <ImageBrush ImageSource="/imatges/llistat/fila3.png"></ImageBrush>
-                        </StackPanel.Background>
-
-                        <Separator Height="15"/>
-                        
-                        <Label Content="NPC" Foreground="White" HorizontalContentAlignment="Center"/>
-
-                        <TextBlock Name="TextBlockItemId11" Text="PROVA"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                        <TextBlock Name="TextBlockItemNom22" Text="PROVA2"  Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                    </StackPanel>
-                </StackPanel>
-                
-
-                <StackPanel Margin="0,10,0,0" Width="1000">
-
-                    
-
-                    <ListBox Name="TaulerItems" Background="Transparent" BorderThickness="0,0,0,0" SelectionMode="Single" Width="920" Padding="0" SelectionChanged="TaulerItems_SelectionChanged" ItemContainerStyle="{StaticResource ListBoxItemStyleItemsList}">
-
-                        <ListBox.ItemTemplate>
-
-                            <DataTemplate>
-
-                                <Grid Margin="0,0,0,0" Height="40">
-                                    <Grid.Background>
-                                        <ImageBrush ImageSource="/imatges/llistat/fila6.png"></ImageBrush>
-                                    </Grid.Background>
-
-                                    <Grid.ColumnDefinitions>
-
-                                        <!--Width total és 900-->
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="500"/>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="100"/>
-
-                                    </Grid.ColumnDefinitions>
+                </ScrollViewer>
 
 
-
-
-                                    <Grid Grid.Column="0" VerticalAlignment="Center">
-
-                                        <TextBlock Text="{Binding Path=ItemId}" Foreground="WhiteSmoke" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                                    </Grid>
-                                    <Grid Grid.Column="1">
-
-                                        <TextBlock Text="{Binding Path=Name}" Foreground="{Binding Path=Rarity, Converter={StaticResource RarityToColorConverter}}" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                                    </Grid>
-                                    <Grid Grid.Column="2">
-
-                                        <TextBlock Text="ilvl" TextAlignment="Right" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
-                                    </Grid>
-                                    <Grid Grid.Column="3">
-
-                                        <TextBlock Text="{Binding Path=ILevel}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
-                                    </Grid>
-                                    <Grid Grid.Column="4">
-
-                                        <TextBlock Text="lvl" TextAlignment="Right" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
-                                    </Grid>
-                                    <Grid Grid.Column="5">
-
-                                        <TextBlock Text="{Binding Path=Requeriment}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
-                                    </Grid>
-                                    <Grid Grid.Column="6">
-
-                                        <TextBlock Text="%" TextAlignment="Right" Foreground="DimGray" FontSize="16" VerticalAlignment="Center" Margin="0,0,5,0" Opacity="0.4"/>
-                                    </Grid>
-                                    <Grid Grid.Column="7">
-
-                                        <TextBlock Text="{Binding Path=DropChance}" Foreground="WhiteSmoke" FontSize="16" VerticalAlignment="Center"/>
-                                    </Grid>
-
-
-
-                                </Grid>
-
-
-                            </DataTemplate>
-
-                        </ListBox.ItemTemplate>
-
-                    </ListBox>
-
-                </StackPanel>
 
 
 
             </StackPanel>
 
-        </ScrollViewer>
+        </StackPanel>
 
     </Grid>
 
