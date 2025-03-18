@@ -28,6 +28,32 @@
         </Setter>
     </Style>
 
+    <Style x:Key="RadioBtnLeftMenu" TargetType="RadioButton">
+        <!-- Default Style -->
+        <Setter Property="Foreground" Value="#B89F5D"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="border" Background="Transparent" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover Effect -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#5f2a2a"/>
+                            <!--Gris 1: 2f2f2f, Verd 1: 163916, Verd 2: 00755a, Verd 3: 005843, Verd 4: 003428, Red 1: 711313, Red 2: 5f2a2a-->
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#711313"/>
+                            <Setter Property="Foreground" Value="Wheat" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="BtnStyle" TargetType="RadioButton">
 
         <Setter Property="Cursor" Value="Hand"/>

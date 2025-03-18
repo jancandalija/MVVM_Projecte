@@ -75,7 +75,7 @@ namespace MVVMarcane2
                 glowIniciarVermell.Opacity = 0;
                 glowIniciarVerd.BeginAnimation(OpacityProperty, fadeOutIn);
                 glowIniciarBlau.BeginAnimation(OpacityProperty, fadeInOut);
-                MainWindow mainWindow = new MainWindow();
+                FinestraDos mainWindow = new FinestraDos();
                 UserConfig.ID_USUARI = usuari.UsuariId;
 				mainWindow.Show();
                 this.Close();

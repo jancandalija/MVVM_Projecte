@@ -150,19 +150,11 @@ Padding="20,0,20,0"/>
                             <!---#202020-->
 
                             <StackPanel Orientation="Horizontal">
-                                <!-- Tipus -->
-                                <Grid>
-                                    <RadioButton GroupName="FiltreItems" Style="{StaticResource BtnStyleFiltres}" IsChecked="False" x:Name="RBFiltresItems">
-                                        <Grid>
-                                            <TextBlock Text="Tipus" Style="{StaticResource Text_StyleFiltres}" FontWeight="Bold"/>
-                                        </Grid>
-                                    </RadioButton>
-                                </Grid>
 
                                 <!-- Instancia -->
                                 <Grid Height="60" Width="60">
 
-                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Lloc" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <RadioButton Content="Lloc" GroupName="FiltreItems" Style="{StaticResource RadioBtnLeftMenu}" Background="Transparent" FontSize="14" IsChecked="False" x:Name="FiltrarPerLloc" Height="50" Width="50" Cursor="Hand"></RadioButton>
                                     <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
                                         <Border.Background>
                                             <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
@@ -173,7 +165,7 @@ Padding="20,0,20,0"/>
                                 <!-- Tipus -->
                                 <Grid Height="60" Width="60">
 
-                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Tipus" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <RadioButton Content="Tipus" GroupName="FiltreItems" Style="{StaticResource RadioBtnLeftMenu}" Background="Transparent" FontSize="14" IsChecked="False" x:Name="FiltrarPerTipus" Height="50" Width="50" Cursor="Hand"></RadioButton>
                                     <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
                                         <Border.Background>
                                             <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
@@ -184,7 +176,7 @@ Padding="20,0,20,0"/>
                                 <!-- Raresa -->
                                 <Grid Height="60" Width="60">
 
-                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Raresa" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <RadioButton Content="Raresa" GroupName="FiltreItems" Style="{StaticResource RadioBtnLeftMenu}"  Background="Transparent" FontSize="14"  IsChecked="False" x:Name="FiltrarPerRaresa" Height="50" Width="50" Cursor="Hand"></RadioButton>
                                     <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
                                         <Border.Background>
                                             <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
@@ -195,7 +187,7 @@ Padding="20,0,20,0"/>
                                 <!-- Nivell -->
                                 <Grid Height="60" Width="60">
 
-                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Nivell" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <RadioButton Content="Nivell" GroupName="FiltreItems" Style="{StaticResource RadioBtnLeftMenu}" Background="Transparent" FontSize="14"  IsChecked="False" x:Name="FiltrarPerNivell" Height="50" Width="50" Cursor="Hand"></RadioButton>
                                     <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
                                         <Border.Background>
                                             <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
@@ -206,7 +198,7 @@ Padding="20,0,20,0"/>
                                 <!-- Drop -->
                                 <Grid Height="60" Width="60">
 
-                                    <Button Command="{Binding HomeCommand}" Style="{StaticResource BtnLeftMenu}" Content="Drop" Background="Transparent" FontSize="14" Height="50" Width="50" Cursor="Hand"></Button>
+                                    <RadioButton Content="Drop" GroupName="FiltreItems" Style="{StaticResource RadioBtnLeftMenu}" Background="Transparent" FontSize="14"  IsChecked="False" x:Name="FiltrarPerDrop" Height="50" Width="50" Cursor="Hand"></RadioButton>
                                     <Border Height="25" IsHitTestVisible="False" Margin="0,-15,0,0">
                                         <Border.Background>
                                             <ImageBrush ImageSource="/imatges/icons/left_bar/section_items.png" Stretch="Uniform" />
@@ -221,13 +213,9 @@ Padding="20,0,20,0"/>
 
                             <!-- FILTRAR -->
                             <Grid>
-                                <Button Style="{StaticResource BtnStyleFiltresFiltrar}" Click="Button_Click">
+                                <Button Click="Button_Click" Background="Transparent" Height="50">
                                     <Grid>
-                                        <Image Source="/imatges/backgrounds_bamboo/drac_or_marc_boto.jpg"
-              Stretch="Fill"
-              RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
-                                        </Image>
-                                        <TextBlock Text="" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
+                                        <TextBlock Text="Filtrar" Style="{StaticResource Text_StyleFiltres}" FontWeight="Black" />
                                     </Grid>
                                 </Button>
                             </Grid>
@@ -247,7 +235,7 @@ Padding="20,0,20,0"/>
 
                 <!-- Filtre (Tipus) -->
 
-                <StackPanel Background="#202020" Visibility="{Binding ElementName=RBFiltresItems, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <StackPanel Background="#202020" Visibility="{Binding ElementName=FiltrarPerTipus, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <StackPanel Orientation="Horizontal">
 
 
@@ -615,10 +603,6 @@ Padding="20,0,20,0"/>
                                 <DataTemplate>
 
                                     <Grid Margin="0,0,0,0" Height="40">
-
-                                        <Grid.Background>
-                                            <ImageBrush ImageSource="/imatges/llistat/fila6.png"></ImageBrush>
-                                        </Grid.Background>
 
                                         <Grid.ColumnDefinitions>
                                             <!--Width total és 900-->
